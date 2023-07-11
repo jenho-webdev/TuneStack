@@ -1,0 +1,68 @@
+:root {
+    background: linear-gradient(31deg, rgba(26,29,37,1) 0%, rgba(19,28,52,1) 35%, rgba(13,33,47,1) 100%);
+    --purple: linear-gradient(274deg, rgba(69,35,131,1) 0%, rgba(49,19,135,1) 35%, rgba(78,40,125,1) 100%);
+    --white: rgb(239, 241, 245);
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    min-height: 100vh; width: 100vw;
+}
+
+a { color: inherit; } 
+
+
+/* Header */
+
+header {
+    background: var(--purple); color: var(--white);
+    display: flex; align-items: center;
+    height: 80px; width: 100%;
+    padding: 0 20px;
+    position: fixed;
+}
+
+#logo {
+    height: 40px;
+    margin: 0 80px 0 10px;
+}
+
+
+/* Login/Sign-Up Card */
+
+#card-flex {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; width: 100vw;
+}
+
+#card {
+    background: var(--purple); color: var(--white);
+    border-radius: 10px;
+    width: 330px;
+}
+
+#card-container {
+    padding: 0 28px 0 20px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+}
+
+#card h2 {
+    margin-bottom: 0px;
+}
+
+#card input {
+    height: 40px; width: 90%;
+    margin-left: 8px;
+    padding: 0 20px;
+}
+
+#password-input {
+    margin-top: 5px;
+}
+
+#card button {
+    height: 50px; width: 120px;
+    margin-top: -5px;
+}
