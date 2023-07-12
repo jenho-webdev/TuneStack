@@ -1,3 +1,5 @@
+// import models (Can move imports to controllers when made)
+const models = require('./models/index.js');
 // Import Express.
 const express = require('express');
 // Import connection to db via Sequelize and mysql2 driver.
