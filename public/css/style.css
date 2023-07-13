@@ -1,5 +1,7 @@
 :root {
     background: linear-gradient(31deg, rgba(26,29,37,1) 0%, rgba(19,28,52,1) 35%, rgba(13,33,47,1) 100%);
+    --darkPurple: linear-gradient(180deg, rgb(51, 52, 97) 31%, rgb(37, 36, 96) 89%, rgb(42, 41, 99) 100%);
+    --lightBlue: linear-gradient(349deg, rgba(5,153,171,1) 0%, rgba(38,126,191,1) 35%, rgba(53,91,228,1) 100%);
     --purple: linear-gradient(274deg, rgba(69,35,131,1) 0%, rgba(49,19,135,1) 35%, rgba(78,40,125,1) 100%);
     --white: rgb(239, 241, 245);
 }
@@ -69,7 +71,7 @@ header a {
     background: none;
     height: 50px; width: 120px;
     margin-top: -5px;
-    background: linear-gradient(349deg, rgba(5,153,171,1) 0%, rgba(38,126,191,1) 35%, rgba(53,91,228,1) 100%);
+    background: var(--lightBlue);
     border-radius: 5px;
     color: var(--white);
     font-family: Arial, Helvetica, sans-serif;
@@ -86,10 +88,41 @@ header a {
     text-decoration: underline;
 }
 
+/* Navbar */
+nav {
+    position: fixed;
+    bottom: 10px;
+    width: 100vw;
+    display: flex; justify-content: center;
+}
+
+#nav-container {
+    background: var(--darkPurple);
+    height: 70px;
+    width: 350px;
+    display: flex; justify-content: center; align-items: center;
+    gap: 25px;
+    border-radius: 10px;
+}
+
+nav a {
+    height: 50px; width: 50px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+nav img {
+    height: 100%;
+}
+
 /* Misc */
 .flex-center {
     display: flex; align-items: center; justify-content: center;
     min-height: 100vh; width: 100vw;
+}
+
+.flex-center-x {
+    display: flex; align-items: center;
 }
 
 .shadow {

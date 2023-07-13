@@ -11,5 +11,8 @@
     <body>
         {{> header}}
         {{{body}}}
+        {{#if loggedIn}}
+            {{> navbar}}
+        {{/if}}
     </body>
 </html>

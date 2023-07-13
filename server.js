@@ -10,12 +10,28 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 // Import Router
 const router = require('./routes/router');
+// Import express-session
+const session = require('express-session');
 
 // Create new instance of express.
 const app = express();
 
 // Set post where server will listen.
 const PORT = process.env.PORT || 3001;
+
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+// Set up sessions with cookies
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+      db: sequelize
+  })
+};
+app.use(session(sess));
 
 // Set up handlebars
 const hbs = exphbs.create({

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="666.66669"
+   height="666.66669"
+   viewBox="0 0 20.000001 20.000001"
+   fill="none"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="logout.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.2525"
+     inkscape:cx="332.93413"
+     inkscape:cy="333.33333"
+     inkscape:window-width="1718"
+     inkscape:window-height="1360"
+     inkscape:window-x="3633"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg6" />
+  <path
+     d="m 15.2929,12.2929 c -0.3905,0.3905 -0.3905,1.0237 0,1.4142 0.3905,0.3905 1.0237,0.3905 1.4142,0 l 2.913,-2.913 c 0.015,-0.015 0.0296,-0.0304 0.0436,-0.0461 C 19.87,10.5648 20,10.2976 20,10 20,9.7024 19.87,9.4352 19.6637,9.252 19.6497,9.2363 19.6351,9.2209 19.6201,9.2059 l -2.913,-2.91301 c -0.3905,-0.39052 -1.0237,-0.39052 -1.4142,0 -0.3905,0.39053 -0.3905,1.02369 0,1.41422 L 16.5858,9 H 11 c -0.5523,0 -1,0.4477 -1,1 0,0.5523 0.4477,1 1,1 h 5.5858 z"
+     fill="#323232"
+     id="path2"
+     style="fill:#eff1f5;fill-opacity:1" />
+  <path
+     d="M 3,0 C 1.34315,0 0,1.34315 0,3 v 14 c 0,1.6569 1.34315,3 3,3 h 9.5 C 13.8807,20 15,18.8807 15,17.5 V 14.7326 C 14.8519,14.647 14.7125,14.5409 14.5858,14.4142 13.9314,13.7598 13.8253,12.7649 14.2674,12 H 11 C 9.8954,12 9,11.1046 9,10 9,8.8954 9.8954,8 11,8 h 3.2674 C 13.8253,7.23514 13.9314,6.24015 14.5858,5.58579 14.7125,5.4591 14.8519,5.35296 15,5.26738 V 2.5 C 15,1.11929 13.8807,0 12.5,0 Z"
+     fill="#323232"
+     id="path4"
+     style="fill:#eff1f5;fill-opacity:1" />
+</svg>
