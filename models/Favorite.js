@@ -4,7 +4,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 // Favorite model will have all of the qualities of the Model object.
 class Favorite extends Model {}
-// Define model belonging to Favorite (Favorite schema). 
+// Define model belonging to Favorite (Favorite schema).
 Favorite.init(
   {
     id: {
@@ -31,7 +31,7 @@ Favorite.init(
     sequelize,
     // Sequelize adds two timestamp columns to table: createdAt and updatedAt
     timestamps: true,
-    // use the model name as it is without any modification. 
+    // use the model name as it is without any modification.
     freezeTableName: true,
     // convert the column names to snake_case
     underscored: true,
