@@ -35,7 +35,7 @@ Favorite.init(
     freezeTableName: true,
     // convert the column names to snake_case
     underscored: true,
-    modelName: 'album',
+    modelName: 'favorite',
   }
 );
 
