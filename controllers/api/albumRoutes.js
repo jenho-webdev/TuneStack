@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Album } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// The `/api/albums` endpoint
+
 router.post('/', withAuth, async (req, res) => {
   try {
     const newAlbum = await Album.create({
