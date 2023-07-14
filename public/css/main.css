@@ -51,8 +51,6 @@ header a {
     margin: 0 80px 0 10px;
 }
 
-
-
 /* Navbar */
 nav {
     background: var(--darkPurple);
@@ -85,7 +83,9 @@ nav img {
     height: 100%;
 }
 
-
+#logout {
+    cursor: pointer;
+}
 
 /* Misc */
 .flex-center {

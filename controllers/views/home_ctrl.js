@@ -15,6 +15,7 @@ module.exports = async (req, res) => {
             page: 'Home',                   // Page title
             css: '/css/pages/home.css',     // Page stylesheet path
             loggedIn: req.session.loggedIn, // Logged in status
+            id: req.session.user_id,        // User id
             //// albums: albums,            // 10 most recent album uploads
         });
     

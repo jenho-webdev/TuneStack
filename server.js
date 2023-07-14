@@ -34,18 +34,25 @@ const sess = {
 };
 app.use(session(sess));
 
+
+
+
 // Set up handlebars
 const hbs = exphbs.create({
   extname: 'hbs',
   partialsDir: path.join(__dirname, 'views', 'partials')
 });
 app
-  .engine('hbs', hbs.engine)
   .set('view engine', 'hbs')
   .set('views', path.join(__dirname, "views"))
-  .use(express.static(path.join(__dirname,"public")))
+  .engine('hbs', hbs.engine)
+  .use(express.static(path.join(__dirname, "public")))
   .use('/handlers', express.static(path.join(__dirname, 'handlers')));
 
+
+
+
+  
 // Set up middleware
 app
     .use(express.json())
