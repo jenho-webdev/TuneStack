@@ -1,3 +1,5 @@
+//// const Album = require('../../models/album');
+
 module.exports = async (req, res) => {
     try {
         // If user is logged out, redirect to login page
@@ -5,13 +7,15 @@ module.exports = async (req, res) => {
             res.redirect('/login');
         }
 
-        // TODO: Get 10 most recent album uploads
+        // Get 10 latest album uploads
+        //// const albums = await Album.find({}).sort({ createdAt: -1 }).limit(10);
 
         // Render home page and pass data to view
         res.render('pages/home', { 
             page: 'Home',                   // Page title
             css: '/css/pages/home.css',     // Page stylesheet path
             loggedIn: req.session.loggedIn, // Logged in status
+            //// albums: albums,            // 10 most recent album uploads
         });
     
     } catch (err) {

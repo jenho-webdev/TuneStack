@@ -10,10 +10,13 @@
     </head>
 
     <body>
+        {{!-- Header --}}
         {{> header}}
 
+        {{!-- Body --}}
         {{{body}}}
         
+        {{!-- Navbar --}}
         {{#if loggedIn}}
             {{> navbar}}
         {{/if}}
