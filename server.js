@@ -43,7 +43,8 @@ app
   .engine('hbs', hbs.engine)
   .set('view engine', 'hbs')
   .set('views', path.join(__dirname, "views"))
-  .use(express.static(path.join(__dirname,"public")));
+  .use(express.static(path.join(__dirname,"public")))
+  .use('/handlers', express.static(path.join(__dirname, 'handlers')));
 
 // Set up middleware
 app
