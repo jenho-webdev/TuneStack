@@ -4,14 +4,14 @@ const User = require('./User.js');
 const Favorite = require('./Favorite.js');
 
 
-// // Album belongsTo User
-// Album.belongsTo(User, {
-//   foreignKey: 'creator_id',
-// });
-// // Users have many Albums
-// User.hasMany(Album, {
-//   foreignKey: 'creator_id',
-// });
+// Album belongsTo User
+Album.belongsTo(User, {
+  foreignKey: 'user_id',
+});
+// Users have many Albums
+User.hasMany(Album, {
+  foreignKey: 'user_id',
+});
 
 // // Users have many Favorites (User can have multiple favorites in the Favorites table.)
 // User.hasMany(Favorite, {
