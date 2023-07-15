@@ -10,7 +10,9 @@ const sequelize = require('../config/connection');
 
 class User extends Model {
   checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
+    isCorrect = bcrypt.compareSync(loginPw, this.password);
+    console.log(`checking password ${isCorrect}`);
+    return isCorrect;
   }
 }
 // Define model belonging to user (User schema).
