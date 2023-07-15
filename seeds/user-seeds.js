@@ -24,6 +24,9 @@ const userData = [
     },
   ];
 // Function that will seed all data to schema at once.
-const seedUsers = () => User.bulkCreate(userData);
+const seedUsers = () => User.bulkCreate(userData, {
+  individualHooks: true,
+  returning: true,
+});
 // Export function so that it can be used elsewhere.
 module.exports = seedUsers;
