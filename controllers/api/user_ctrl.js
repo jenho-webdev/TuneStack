@@ -25,16 +25,24 @@ router.post('/login', async (req, res) => {
       where: { username: req.body.username },
     });
 
+    console.log(userData);
+
     if (!userData) {
       res.status(400).json({ message: 'Incorrect username, please try again' });
       return;
+    } else {
+      res.json({ message: 'correct username' });
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
+    console.log(`validpassword: ${validPassword}`);
 
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect password, please try again' });
+
       return;
+    } else {
+      res.json({ message: 'correct password' });
     }
 
     req.session.save(() => {

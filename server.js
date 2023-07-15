@@ -19,45 +19,41 @@ const app = express();
 // Set post where server will listen.
 const PORT = process.env.PORT || 3001;
 
-
-
 // Set up session with cookies
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-      db: sequelize
-  })
+    db: sequelize,
+  }),
 };
 app.use(session(sess));
-
-
-
 
 // Set up handlebars
 const hbs = exphbs.create({
   extname: 'hbs',
-  partialsDir: path.join(__dirname, 'views', 'partials')
+  partialsDir: path.join(__dirname, 'views', 'partials'),
 });
 app
   .set('view engine', 'hbs')
-  .set('views', path.join(__dirname, "views"))
+  .set('views', path.join(__dirname, 'views'))
   .engine('hbs', hbs.engine)
-  .use(express.static(path.join(__dirname, "public")))
+  .use(express.static(path.join(__dirname, 'public')))
   .use('/handlers', express.static(path.join(__dirname, 'handlers')));
 
-
-
-
-  
 // Set up middleware
 app
-    .use(express.json())
-    .use(express.urlencoded({ extended: true }))
-    .use(router);
+  .use(express.json())
+  .use(express.urlencoded({ extended: true }))
+  .use(router);
 
 // Implement Sequlize to sync models to database and start server. Not syncing yet but needed for connection
 sequelize.sync({ force: false }).then(() => {
