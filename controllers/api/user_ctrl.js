@@ -3,7 +3,9 @@ const { User } = require('../../models');
 
 // The `/api/users` endpoint
 
+
 // Create new user
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create({
@@ -46,13 +48,16 @@ router.post('/login', async (req, res) => {
     if (!userData) {
       res.status(400).json({ message: 'Incorrect username, please try again.' });
       return;
+    } else {
+      res.json({ message: 'correct username' });
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
-
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect password, please try again.' });
       return;
+    } else {
+      res.json({ message: 'correct password' });
     }
 
     req.session.save(() => {
