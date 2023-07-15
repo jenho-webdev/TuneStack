@@ -19,9 +19,10 @@ const app = express();
 // Set post where server will listen.
 const PORT = process.env.PORT || 3001;
 
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-// Set up sessions with cookies
+
+// Set up session with cookies
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
@@ -33,17 +34,25 @@ const sess = {
 };
 app.use(session(sess));
 
+
+
+
 // Set up handlebars
 const hbs = exphbs.create({
   extname: 'hbs',
   partialsDir: path.join(__dirname, 'views', 'partials')
 });
 app
-  .engine('hbs', hbs.engine)
   .set('view engine', 'hbs')
   .set('views', path.join(__dirname, "views"))
-  .use(express.static(path.join(__dirname,"public"))); // Set static folder for express
+  .engine('hbs', hbs.engine)
+  .use(express.static(path.join(__dirname, "public")))
+  .use('/handlers', express.static(path.join(__dirname, 'handlers')));
 
+
+
+
+  
 // Set up middleware
 app
     .use(express.json())

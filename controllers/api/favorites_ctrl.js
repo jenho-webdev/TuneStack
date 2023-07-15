@@ -26,23 +26,23 @@ router.get('/:id', async (req, res) => {
 });
 
 //create a new favor
-router.post('/', (req, res) => {
-  /* req.body should look like this...
-    {
-      album_id: "1",
-    }
-  */
-  try {
-const newFavor = await Favorite.create({
-      ...req.body,    
-      user_id: req.session.user_id,
-    });
+router.post('/', async (req, res) => {
+    /* req.body should look like this...
+      {
+        album_id: "1",
+      }
+    */
+    try {
+  const newFavor = await Favorite.create({
+        ...req.body,    
+        user_id: req.session.user_id,
+      });
 
-    res.status(200).json(newArticle);
-  } catch (err) {
-    res.status(400).json(err);
+      res.status(200).json(newArticle);
+    } catch (err) {
+      res.status(400).json(err);
 
-}
+  }
 });
 
 

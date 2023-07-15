@@ -1,0 +1,36 @@
+/* Item (Home Page) */
+#home .item {
+    background: var(--darkPurple);
+    height: 100px; width: 350px;
+    border-radius: 10px;
+    display: flex; align-items: center;
+}
+
+#home .album-art {
+    height: 100%; width: 100px;
+    display: flex; align-items: center; justify-content: center;
+}
+
+#home .album-art img {
+    height: 80px; width: 80px;
+    border-radius: 10px;
+}
+
+#home .item-details {
+    height: 100px; width: 180px;
+    display: flex; flex-direction: column; justify-content: center;
+}
+
+#home p {
+    color: var(--white);
+    margin: 3px 0;
+}
+
+#home .favorite {
+    height: 100%; width: 70px;
+    display: flex; align-items: center; justify-content: center;
+}
+
+#home .favorite img {
+    height: 50px; width: 50px;
+}
