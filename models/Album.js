@@ -4,7 +4,9 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 // Album model will have all of the qualities of the Model object.
 class Album extends Model {}
+
 // Define model belonging to Album (Album schema).
+
 Album.init(
   {
     id: {
