@@ -4,7 +4,6 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 // Favorite model will have all of the qualities of the Model object.
 class Favorite extends Model {}
-
 // Define model belonging to Favorite (Favorite schema).
 Favorite.init(
   {
