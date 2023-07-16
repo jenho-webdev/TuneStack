@@ -22,8 +22,6 @@ router.post('/', async (req, res) => {
         .json({ user: userData, message: 'You are now logged in.' });
     });
   } catch (err) {
-    res.status(400).json(err);
-    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -50,8 +48,6 @@ router.post('/login', async (req, res) => {
         .status(400)
         .json({ message: 'Incorrect username, please try again.' });
       return;
-    } else {
-      res.json({ message: 'correct username' });
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
@@ -60,8 +56,6 @@ router.post('/login', async (req, res) => {
         .status(400)
         .json({ message: 'Incorrect password, please try again.' });
       return;
-    } else {
-      res.json({ message: 'correct password' });
     }
 
     req.session.save(() => {
