@@ -15,12 +15,12 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
-        res.status(200).json({ user: userData, message: 'You are now logged in.' });
+        res.status(200).json({ user: userData, message: 'Account created successfully. You are now logged in.' });
     });
 
   } catch (err) {
       console.log(err);
-      res.status(500).json(err);
+      res.status(500).json({ error: err, message: 'Failed to create new user.' });
   }
 });
 
@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
     res.status(200).json(userData);
 
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({ error: err, message: 'Failed to retrieve all users.' });
   }
 });
 
@@ -62,8 +62,7 @@ router.post('/login', async (req, res) => {
     });
 
   } catch (err) {
-    res.status(500).json(err);
-    console.log(err);
+    res.status(500).json({ error: err, message: 'Failed to login user.' });
   }
 });
 
@@ -75,7 +74,7 @@ router.post('/logout', (req, res) => {
     });
 
   } else {
-    res.status(404).end();
+    res.status(404).end('Session not found.');
   }
 });
 

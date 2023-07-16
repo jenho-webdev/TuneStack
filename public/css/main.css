@@ -5,6 +5,10 @@
     --white: rgb(239, 241, 245);
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
