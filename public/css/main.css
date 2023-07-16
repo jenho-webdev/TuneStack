@@ -94,13 +94,10 @@ nav img {
 /* Misc */
 .flex-center {
     display: flex; align-items: center; justify-content: center;
-    min-height: 100vh; width: 100vw;
 }
 
 .flex-center-x {
-    padding-top: 80px;
     display: flex; align-items: center; flex-direction: column;
-    gap: 20px;
 }
 
 .shadow {

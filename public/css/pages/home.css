@@ -1,4 +1,9 @@
 /* Item (Home Page) */
+#home {
+    padding-top: 80px;
+    gap: 20px;
+}
+
 #home .item {
     background: var(--darkPurple);
     height: 100px; width: 350px;
