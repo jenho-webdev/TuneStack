@@ -9,7 +9,7 @@ class Album extends Model {}
 
 Album.init(
   {
-    id: {
+    album_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
@@ -37,14 +37,6 @@ Album.init(
     description: {
       type: DataTypes.TEXT,
       allowNull: false,
-    },
-    creator_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-      allowNull: true,
     },
   },
   {
