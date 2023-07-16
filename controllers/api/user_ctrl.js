@@ -4,7 +4,6 @@ const { User } = require('../../models');
 // The `/api/users` endpoint
 
 // Create new user
-
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create({
@@ -14,29 +13,13 @@ router.post('/', async (req, res) => {
 
     // Automatically log in the user after registration
     req.session.save(() => {
-
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res
-        .status(200)
-        .json({ user: userData, message: 'You are now logged in.' });
+        req.session.user_id = userData.id;
+        req.session.logged_in = true;
+        res.status(200).json({ user: userData, message: 'You are now logged in.' });
     });
 
   } catch (err) {
-
-    res.status(500).json(err);
-  }
-});
-
-// Get all users
-router.get('/', async (req, res) => {
-  try {
-    const userData = await User.findAll({});
-
-    res.status(200).json(userData);
-  } catch (err) {
-    res.status(500).json(err);
+      res.status(500).json({ error: err, message: 'Failed to create new user.' });
   }
 });
 
@@ -48,7 +31,7 @@ router.get('/', async (req, res) => {
     res.status(200).json(userData);
 
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({ error: err, message: 'Failed to retrieve all users.' });
   }
 });
 
@@ -84,8 +67,7 @@ router.post('/login', async (req, res) => {
     });
 
   } catch (err) {
-    res.status(500).json(err);
-    console.log(err);
+    res.status(500).json({ error: err, message: 'Failed to login user.' });
   }
 });
 
@@ -97,7 +79,7 @@ router.post('/logout', (req, res) => {
     });
 
   } else {
-    res.status(404).end();
+    res.status(404).end('Session not found.');
   }
 });
 
