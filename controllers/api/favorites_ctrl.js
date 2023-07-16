@@ -3,6 +3,7 @@ const { Favorite, User, Album } = require('../../models');
 
 // The `/api/favorites` endpoint
 
+// Get all user's favorites
 router.get('/', async (req, res) => {
   try {
     Favorite.findAll({
@@ -13,7 +14,7 @@ router.get('/', async (req, res) => {
   } catch (err) {}
 });
 
-//get just one favor
+// Get one user's favorite
 router.get('/:id', async (req, res) => {
   try {
     const favorite = await Favorite.findOne({
@@ -22,10 +23,10 @@ router.get('/:id', async (req, res) => {
       },
 
   })
- } catch (err) {}
+  } catch (err) {}
 });
 
-//create a new favor
+// Create new favorite
 router.post('/', async (req, res) => {
     /* req.body should look like this...
       {
@@ -41,11 +42,10 @@ router.post('/', async (req, res) => {
       res.status(200).json(newArticle);
     } catch (err) {
       res.status(400).json(err);
-
   }
 });
 
-
+// Update user favorite
 router.delete('/:id', async (req, res) => {
   try {
     const favoriteData = await Favorite.destroy({

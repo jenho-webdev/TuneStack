@@ -1,10 +1,10 @@
 module.exports = async (req, res) => {
     try {
         res.render('pages/404', { 
-            page: '404',                    // Page title
-            css: '/css/pages/404.css',      // Page stylesheet path
-            loggedIn: req.session.loggedIn, // Logged in status
-            id: req.session.user_id,        // User id
+            page: '404',                        // Page title
+            css: '/css/pages/404.css',          // Page stylesheet path
+            loggedIn: req.session.logged_in,    // Logged in status
+            id: req.session.user_id,            // User id
         });
     
     } catch (err) {

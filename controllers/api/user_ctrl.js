@@ -27,20 +27,19 @@ router.post('/', async (req, res) => {
         .json({ user: userData, message: 'You are now logged in.' });
     });
   } catch (err) {
-    res.status(500).json(err);
+      res.status(500).json({ error: err, message: 'Failed to create new user.' });
   }
 });
 
 // Get all users
-// [GET] [/api/users/] with [NO] [BODY]
-
 router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll({});
 
     res.status(200).json(userData);
+
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({ error: err, message: 'Failed to retrieve all users.' });
   }
 });
 
@@ -83,8 +82,7 @@ router.post('/login', async (req, res) => {
         .json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
-    res.status(500).json(err);
-    console.log(err);
+    res.status(500).json({ error: err, message: 'Failed to login user.' });
   }
 });
 
@@ -96,7 +94,7 @@ router.post('/logout', (req, res) => {
       res.status(200).json({ message: 'You are now logged out.' });
     });
   } else {
-    res.status(404).end();
+    res.status(404).end('Session not found.');
   }
 });
 
