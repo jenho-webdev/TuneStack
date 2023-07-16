@@ -1,7 +1,7 @@
 module.exports = async (req, res) => {
     try {
         // If user is logged in, redirect to home page
-        if(req.session.loggedIn) {
+        if(req.session.logged_in) {
             res.redirect('/');
         }
 
