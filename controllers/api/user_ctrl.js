@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
     });
 
   } catch (err) {
-      res.status(500).json(err);
+      res.status(500).json({ error: err, message: 'Failed to create new user.' });
   }
 });
 
