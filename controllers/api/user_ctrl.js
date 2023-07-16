@@ -7,20 +7,19 @@ const { User } = require('../../models');
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create({
-        username: req.body.username,
-        password: req.body.password,
+      username: req.body.username,
+      password: req.body.password,
     });
 
     // Automatically log in the user after registration
     req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
-        res.status(200).json({ user: userData, message: 'Account created successfully. You are now logged in.' });
+        res.status(200).json({ user: userData, message: 'You are now logged in.' });
     });
 
   } catch (err) {
-      console.log(err);
-      res.status(500).json({ error: err, message: 'Failed to create new user.' });
+      res.status(500).json(err);
   }
 });
 
@@ -44,21 +43,27 @@ router.post('/login', async (req, res) => {
     });
 
     if (!userData) {
-      res.status(400).json({ message: 'Incorrect username, please try again.' });
+      res
+        .status(400)
+        .json({ message: 'Incorrect username, please try again.' });
       return;
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
-
     if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect password, please try again.' });
+
+      res
+        .status(400)
+        .json({ message: 'Incorrect password, please try again.' });
       return;
     }
 
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      res.status(200).json({ user: userData, message: 'You are now logged in.' });
+      res
+        .status(200)
+        .json({ user: userData, message: 'You are now logged in!' });
     });
 
   } catch (err) {
@@ -70,7 +75,7 @@ router.post('/login', async (req, res) => {
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(200).json({message: 'You are now logged out.' });
+      res.status(200).json({ message: 'You are now logged out.' });
     });
 
   } else {

@@ -13,6 +13,7 @@ router.post('/', withAuth, async (req, res) => {
     });
 
     res.status(200).json(newAlbum);
+
   } catch (err) {
     res.status(500).json({ error: err, message: 'Failed to create album.' });
   }
@@ -23,6 +24,7 @@ router.get('/', async (req, res) => {
   try {
     const albumData = await Album.findAll({});
     res.status(200).json(albumData);
+
   } catch (err) {
     res.status(500).json({ error: err, message: 'Failed to retrieve all albums.' });
   }
@@ -34,7 +36,6 @@ router.delete('/:id', withAuth, async (req, res) => {
     const albumData = await Album.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
@@ -55,7 +56,6 @@ router.put('/:id', withAuth, async (req, res) => {
     const albumData = await Album.update(req.body, {
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
@@ -65,6 +65,7 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 
     res.status(200).json(albumData);
+    
   } catch (err) {
     res.status(500).json({ error: err, message: 'Failed to update album.' });
   }
