@@ -1,5 +1,6 @@
-// Require sequelize and deconstruct Model and DataTypes.
 const { Model, DataTypes } = require('sequelize');
+
+// Check password against hashed passwor
 
 //Import bcrypt
 const bcrypt = require('bcrypt');
@@ -14,16 +15,18 @@ class User extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-// Define model belonging to user (User schema).
+
+// Define model belonging to user (User schema).\
 User.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     username: {
+
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
@@ -47,11 +50,11 @@ User.init(
 
     sequelize,
     timestamps: false,
+      
     // use the model name as it is without any modification.
     freezeTableName: true,
-    // convert the column names to snake_case
     underscored: true,
-    modelName: 'user',
+    modelName: 'user'
   }
 );
 
