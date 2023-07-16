@@ -3,7 +3,7 @@
 module.exports = async (req, res) => {
     try {
         // If user is logged out, redirect to login page
-        if(!req.session.loggedIn) {
+        if(!req.session.logged_in) {
             res.redirect('/login');
         }
 
@@ -12,11 +12,11 @@ module.exports = async (req, res) => {
 
         // Render home page and pass data to view
         res.render('pages/home', { 
-            page: 'Home',                   // Page title
-            css: '/css/pages/home.css',     // Page stylesheet path
-            loggedIn: req.session.loggedIn, // Logged in status
-            id: req.session.user_id,        // User id
-            //// albums: albums,            // 10 most recent album uploads
+            page: 'Home',                       // Page title
+            css: '/css/pages/home.css',         // Page stylesheet path
+            loggedIn: req.session.logged_in,    // Logged in status
+            id: req.session.user_id,            // User id
+            //// albums: albums,                // 10 most recent album uploads
         });
     
     } catch (err) {
