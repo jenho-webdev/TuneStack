@@ -90,3 +90,4 @@ The creators and contributors of this project are not liable for any damages, da
 It is the responsibility of the deployer and users of this app to ensure proper security measures are implemented and that sensitive information is handled securely.
 
 Always exercise caution when using this or any other web application that involves personal or sensitive data.
+
