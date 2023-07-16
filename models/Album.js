@@ -4,7 +4,9 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 // Album model will have all of the qualities of the Model object.
 class Album extends Model {}
-// Define model belonging to Album (Album schema). 
+
+// Define model belonging to Album (Album schema).
+
 Album.init(
   {
     id: {
@@ -36,12 +38,20 @@ Album.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    creator_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+      allowNull: true,
+    },
   },
   {
     sequelize,
     // Sequelize adds two timestamp columns to table: createdAt and updatedAt
     timestamps: true,
-    // use the model name as it is without any modification. 
+    // use the model name as it is without any modification.
     freezeTableName: true,
     // convert the column names to snake_case
     underscored: true,

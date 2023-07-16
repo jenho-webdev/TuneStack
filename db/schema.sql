@@ -1,4 +1,4 @@
 -- Delete database
-DROP DATABASE IF EXISTS soundstack_db;
+DROP DATABASE IF EXISTS tunestack_db;
 -- Create database
-CREATE DATABASE soundstack_db;
+CREATE DATABASE tunestack_db;
