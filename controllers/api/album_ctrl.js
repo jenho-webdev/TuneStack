@@ -19,6 +19,18 @@ router.get('/', async (req, res) => {
 });
 
 //Create new album
+
+// [POST] [/api/Albums/] with [JSON][BODY]
+// BODY should look like this
+// {
+//   "title": "",
+//   "url": "",
+//   "artist": "",
+//   "year": "",
+//    "description":"",
+//    "genre": ""
+// }
+
 //router.post('/', withAuth, async (req, res) => {
 router.post('/', async (req, res) => {
   try {
@@ -33,7 +45,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-//Delete a album
+//Delete an album
 // router.delete('/:id', withAuth, async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
