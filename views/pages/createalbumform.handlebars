@@ -1,0 +1,25 @@
+<main>
+    <h2>Add Album</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="title">Album Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required><br><br>
+
+        <label for="artist">Artist:</label>
+        <input type="text" id="artist" name="artist" required><br><br>
+
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" required><br><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" cols="50"></textarea>
+        <br><br>
+
+        <label for="image">Album Cover:</label>
+        <button id="upload_widget" class="cloudinary-button"> Upload </button>
+        <br><br>
+
+    </form>
+</main>
