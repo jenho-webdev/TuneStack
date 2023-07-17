@@ -4,8 +4,35 @@ const withAuth = require('../../utils/auth');
 
 // The `/api/albums` endpoint
 
-// Create new album
-router.post('/', withAuth, async (req, res) => {
+//Get ALL albums
+router.get('/', async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
+    const albumData = await Album.findAll();
+    // Serialize data so the template can read it
+    const albums = albumData.map((album) => album.get({ plain: true }));
+
+    res.status(200).json(albums);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+//Create new album
+
+// [POST] [/api/Albums/] with [JSON][BODY]
+// BODY should look like this
+// {
+//   "title": "",
+//   "cloudinary_url:": "",
+//  "ext_url": "",
+//   "artist": "",
+//   "year": "",
+//    "description":"",
+//    "genre": ""
+// }
+
+reference_url: router.post('/', withAuth, async (req, res) => {
   try {
     const newAlbum = await Album.create({
       ...req.body,
@@ -13,7 +40,6 @@ router.post('/', withAuth, async (req, res) => {
     });
 
     res.status(200).json(newAlbum);
-
   } catch (err) {
     res.status(500).json({ error: err, message: 'Failed to create album.' });
   }
@@ -24,9 +50,10 @@ router.get('/', async (req, res) => {
   try {
     const albumData = await Album.findAll({});
     res.status(200).json(albumData);
-
   } catch (err) {
-    res.status(500).json({ error: err, message: 'Failed to retrieve all albums.' });
+    res
+      .status(500)
+      .json({ error: err, message: 'Failed to retrieve all albums.' });
   }
 });
 
@@ -65,7 +92,6 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 
     res.status(200).json(albumData);
-    
   } catch (err) {
     res.status(500).json({ error: err, message: 'Failed to update album.' });
   }
