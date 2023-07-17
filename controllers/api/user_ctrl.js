@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // The `/api/users` endpoint
 
@@ -10,7 +11,7 @@ const { User } = require('../../models');
 //  "password": ""
 // }
 
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     const userData = await User.create({
       username: req.body.username,
@@ -27,7 +28,7 @@ router.post('/', async (req, res) => {
         .json({ user: userData, message: 'You are now logged in.' });
     });
   } catch (err) {
-      res.status(500).json({ error: err, message: 'Failed to create new user.' });
+    res.status(500).json({ error: err, message: 'Failed to create new user.' });
   }
 });
 
@@ -37,9 +38,25 @@ router.get('/', async (req, res) => {
     const userData = await User.findAll({});
 
     res.status(200).json(userData);
-
   } catch (err) {
-    res.status(500).json({ error: err, message: 'Failed to retrieve all users.' });
+    res
+      .status(500)
+      .json({ error: err, message: 'Failed to retrieve all users.' });
+  }
+});
+
+// Get a user
+router.get('/:id', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findOne({
+      where: { username: req.body.username },
+    });
+
+    res.status(200).json(userData);
+  } catch (err) {
+    res
+      .status(500)
+      .json({ error: err, message: 'Failed to retrieve all users.' });
   }
 });
 

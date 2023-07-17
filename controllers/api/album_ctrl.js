@@ -24,15 +24,15 @@ router.get('/', async (req, res) => {
 // BODY should look like this
 // {
 //   "title": "",
-//   "url": "",
+//   "cloudinary_url:": "",
+//  "ext_url": "",
 //   "artist": "",
 //   "year": "",
 //    "description":"",
 //    "genre": ""
 // }
 
-//router.post('/', withAuth, async (req, res) => {
-router.post('/', async (req, res) => {
+reference_url: router.post('/', withAuth, async (req, res) => {
   try {
     const newAlbum = await Album.create({
       ...req.body,
@@ -40,7 +40,6 @@ router.post('/', async (req, res) => {
     });
 
     res.status(200).json(newAlbum);
-
   } catch (err) {
     res.status(500).json({ error: err, message: 'Failed to create album.' });
   }
@@ -51,9 +50,10 @@ router.get('/', async (req, res) => {
   try {
     const albumData = await Album.findAll({});
     res.status(200).json(albumData);
-
   } catch (err) {
-    res.status(500).json({ error: err, message: 'Failed to retrieve all albums.' });
+    res
+      .status(500)
+      .json({ error: err, message: 'Failed to retrieve all albums.' });
   }
 });
 
@@ -92,7 +92,6 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 
     res.status(200).json(albumData);
-    
   } catch (err) {
     res.status(500).json({ error: err, message: 'Failed to update album.' });
   }
