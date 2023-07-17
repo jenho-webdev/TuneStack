@@ -36,7 +36,7 @@
 }
 
 #home .item-details {
-    height: 100px; width: 190px;
+    height: 100px; width: 185px;
     display: flex; flex-direction: column; justify-content: center;
 }
 
