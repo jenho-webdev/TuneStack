@@ -26,7 +26,7 @@ Album.init(
     //   type: DataTypes.TEXT,
     //   allowNull: true,
     // },
-    // reference_url: {
+    // ext_url: {
     //   type: DataTypes.TEXT,
     //   allowNull: true,
     // },
