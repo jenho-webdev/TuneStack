@@ -1,4 +1,4 @@
-//// const { Album } = require('../../models');
+const { Album } = require('../../models');
 
 module.exports = async (req, res) => {
     try {
@@ -7,8 +7,16 @@ module.exports = async (req, res) => {
             res.redirect('/login');
         }
 
-        // Get 10 latest album uploads
-        //// const albums = await Album.find({}).sort({ createdAt: -1 }).limit(10);
+        // Get 10 (max) most recent album uploads
+        const albums = await Album.findAll({
+            limit: 10,
+            order: [['createdAt', 'DESC']],
+        });
+
+
+        console.log(albums);
+
+
 
         // Render home page and pass data to view
         res.render('pages/home', { 
@@ -16,7 +24,7 @@ module.exports = async (req, res) => {
             css: '/css/pages/home.css',         // Page stylesheet path
             loggedIn: req.session.logged_in,    // Logged in status
             id: req.session.user_id,            // User id
-            //// albums: albums,                // 10 most recent album uploads
+            albums: albums,                     // 10 most recent album uploads
         });
     
     } catch (err) {

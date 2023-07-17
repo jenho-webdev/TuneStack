@@ -1,6 +1,7 @@
 :root {
     --darkPurple: rgb(37, 38, 73);;
     --lightBlue: linear-gradient(349deg, rgba(5,153,171,1) 0%, rgba(38,126,191,1) 35%, rgba(53,91,228,1) 100%);
+    --lightPurple: rgb(179, 167, 197);
     --purple: linear-gradient(274deg, rgba(69,35,131,1) 0%, rgba(49,19,135,1) 35%, rgba(78,40,125,1) 100%);
     --white: rgb(239, 241, 245);
 }
@@ -16,6 +17,7 @@ body {
     padding: 0;
     background: linear-gradient(31deg, rgba(26,29,37,1) 0%, rgba(19,28,52,1) 35%, rgba(13,33,47,1) 100%);
     background-attachment: fixed;
+    user-select: none;
 }
 
 a { 
