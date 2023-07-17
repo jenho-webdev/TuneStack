@@ -22,6 +22,14 @@ Album.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
+    // cloudinary_url: {
+    //   type: DataTypes.TEXT,
+    //   allowNull: true,
+    // },
+    // reference_url: {
+    //   type: DataTypes.TEXT,
+    //   allowNull: true,
+    // },
     artist: {
       type: DataTypes.STRING,
       allowNull: false,
