@@ -1,6 +1,6 @@
 /* Item (Home Page) */
 #home {
-    padding-top: 80px;
+    padding: 80px 0 90px 0;
     gap: 20px;
 }
 
@@ -9,6 +9,20 @@
     height: 100px; width: 350px;
     border-radius: 10px;
     display: flex; align-items: center;
+    cursor: pointer;
+}
+
+#home .item-title {
+    font-weight: bold;
+}
+
+#home .item-artist {
+    font-size: 14px;
+}
+
+#home .item-genre {
+    font-size: 12px;
+    color: var(--lightPurple);
 }
 
 #home .album-art {
@@ -22,7 +36,7 @@
 }
 
 #home .item-details {
-    height: 100px; width: 180px;
+    height: 100px; width: 190px;
     display: flex; flex-direction: column; justify-content: center;
 }
 
@@ -32,10 +46,10 @@
 }
 
 #home .favorite {
-    height: 100%; width: 70px;
+    height: 100%; width: 65px;
     display: flex; align-items: center; justify-content: center;
 }
 
 #home .favorite img {
-    height: 50px; width: 50px;
+    height: 45px; width: 45px;
 }

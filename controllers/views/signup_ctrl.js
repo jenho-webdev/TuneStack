@@ -6,12 +6,12 @@ module.exports = async (req, res) => {
         }
 
         // Render login page and pass data to view
-        res.render('pages/login', { 
+        res.render('pages/signup', { 
             page: 'Login',                  // Page title
             css: '/css/pages/login.css',    // Page stylesheet path
         });
 
     } catch (err) {
-        res.status(500).json({ error: 'Failed to load Login page' });
+        res.status(500).json({ error: 'Failed to load Sign Up page' });
     }
 };

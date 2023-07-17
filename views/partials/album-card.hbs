@@ -1,0 +1,14 @@
+{{!-- Album --}}
+<div class="item shadow" href="{{dataValues.url}}">
+    <div class="album-art">
+        <a href="/albums/{{dataValues.album_id}}" class="flex-center"><img src="/img/album.svg" alt="Album Art"></a>
+    </div>
+    <a href="{{dataValues.url}}"><div class="item-details">
+        <p class="item-title">{{dataValues.title}}</p>
+        <p class="item-artist">{{dataValues.artist}}</p>
+        <p class="item-genre">{{dataValues.genre}}</p>
+    </div></a>
+    <div class="favorite">
+        <img src="/img/heart.svg">
+    </div>
+</div>
