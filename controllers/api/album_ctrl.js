@@ -4,14 +4,6 @@ const withAuth = require('../../utils/auth');
 
 // The `/api/albums` endpoint
 
-// Create new album page
-router.get('/newalbum', async (req, res) => {
-  try {
-    res.render('createalbumform');
-  } catch (err) {
-    res.status(404).render('404');
-  }
-});
 // Create new album
 router.post('/', withAuth, async (req, res) => {
   try {
