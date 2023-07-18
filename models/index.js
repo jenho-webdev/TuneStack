@@ -4,7 +4,10 @@ const User = require('./User.js');
 const Favorite = require('./Favorite.js');
 
 // Users can create many album entries (user-id inseted into Album table)
-User.hasMany(Album);
+User.hasMany(Album, {
+// Specify the foreign key column name explicitly.
+  foreignKey: 'user_id', 
+});
 // Album belongsTo User (Important to create both associations to call methods from either side.)
 Album.belongsTo(User, {
   foreignKey: 'user_id',

@@ -10,7 +10,6 @@ const albumData = [
     year: "1982",
     genre: "Pop",
     description: "Thriller is the sixth studio album by American singer Michael Jackson",
-    creator_id: 1,
   },
   {
     title: "Abbey Road",
@@ -20,7 +19,6 @@ const albumData = [
     year: "1969",
     genre: "Rock",
     description: "Abbey Road is the eleventh studio album by English rock band the Beatles",
-    creator_id: 2,
   },
   {
     title: "The Dark Side of the Moon",
@@ -30,7 +28,6 @@ const albumData = [
     year: "1973",
     genre: "Progressive Rock",
     description: "The Dark Side of the Moon is the eighth studio album by English rock band Pink Floyd",
-    creator_id: 1,
   },
   {
     title: "Back in Black",
@@ -40,7 +37,6 @@ const albumData = [
     year: "1980",
     genre: "Hard Rock",
     description: "Back in Black is the seventh studio album by Australian rock band AC/DC",
-    creator_id: 3,
   },
   {
     title: "Hotel California",
@@ -50,7 +46,6 @@ const albumData = [
     year: "1976",
     genre: "Rock",
     description: "Hotel California is the fifth studio album by American rock band Eagles",
-    creator_id: 2,
   },
   {
     title: "Nevermind",
@@ -60,7 +55,6 @@ const albumData = [
     year: "1991",
     genre: "Grunge",
     description: "Nevermind is the second studio album by American rock band Nirvana",
-    creator_id: 3,
   },
   {
     title: "The Joshua Tree",
@@ -70,7 +64,6 @@ const albumData = [
     year: "1987",
     genre: "Rock",
     description: "The Joshua Tree is the fifth studio album by Irish rock band U2",
-    creator_id: 1,
   },
   {
     title: "Rumours",
@@ -80,7 +73,6 @@ const albumData = [
     year: "1977",
     genre: "Rock",
     description: "Rumours is the eleventh studio album by British-American rock band Fleetwood Mac",
-    creator_id: 2,
   },
   {
     title: "Born to Run",
@@ -90,7 +82,6 @@ const albumData = [
     year: "1975",
     genre: "Rock",
     description: "Born to Run is the third studio album by American singer-songwriter Bruce Springsteen",
-    creator_id: 3,
   },
   {
     title: "Led Zeppelin IV",
@@ -100,7 +91,6 @@ const albumData = [
     year: "1971",
     genre: "Rock",
     description: "Led Zeppelin IV is the fourth studio album by English rock band Led Zeppelin",
-    creator_id: 1,
   },
 ];
 // Function that will seed all data to schema at once.
