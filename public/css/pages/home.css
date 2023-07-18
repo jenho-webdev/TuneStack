@@ -52,4 +52,10 @@
 
 #home .favorite img {
     height: 45px; width: 45px;
+    transition: .2s;
+}
+
+#home .favorite img:hover {
+    filter:brightness(1.3) saturate(2) hue-rotate(50deg);
+    transition: .1s;
 }

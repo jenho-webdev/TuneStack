@@ -1,11 +1,27 @@
 {{!-- Album Page --}}
-<main id="album">
-    <img src="/img/album.svg">
-    <h1>{{album.dataValues.title}}</h1>
-    <a href="{{album.dataValues.url}}"><img src="/img/play.svg"></a>
-    <a><img src="/img/heart.svg"></a>
-    <h2>{{album.dataValues.artist}}</h2>
-    <p>{{album.dataValues.genre}}</p>
-    <p>{{album.dataValues.year}}</p>
-    <p>{{album.dataValues.description}}</p>
+<main id="album" class="flex-center-x">
+    <div id="album-card" class="flex-center-x shadow">
+        <div id="album-header" class="flex-center">
+            <div id="album-art" class="shadow">
+                <img  src="/img/album.svg">
+            </div>
+            <div id="album-header-details">
+                <h1>{{album.dataValues.title}}</h1>
+                <h2>by {{album.dataValues.artist}}</h2>
+                <p><span class="light-purple">Genre: </span>{{album.dataValues.genre}}</p>
+                <p><span class="light-purple">Year: </span>{{album.dataValues.year}}</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <p id="album-description">{{album.dataValues.description}}</p>
+
+        <div class="divider"></div>
+
+        <div id="album-footer" class="center-flex">
+            <a class="button" href="{{album.dataValues.url}}"><img src="/img/play.svg"></a>
+            <a class="button"><img src="/img/heart.svg"></a>
+        </div>
+    </div>
 </main>

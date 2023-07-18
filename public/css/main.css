@@ -78,7 +78,7 @@ nav {
 }
 
 nav a {
-    height: 100%; width: 80px;
+    height: 100%; width: 60px;
     padding: 5px;
     border-radius: 10px;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -87,7 +87,7 @@ nav a {
 }
 
 nav a:hover {
-    filter: brightness(.8)  saturate(5);
+    filter: brightness(.8)  saturate(8);
     transition: .1s;
 }
 
@@ -102,6 +102,13 @@ nav a p {
 
 #logout {
     cursor: pointer;
+}
+
+.nav-divider {
+    height: 40px;
+    width: 2px;
+    background: var(--lightBlue);
+    margin: 0 10px;
 }
 
 /* Misc */
