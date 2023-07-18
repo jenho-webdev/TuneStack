@@ -18,18 +18,14 @@ Album.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    url: {
+    cloudinary_url: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    // cloudinary_url: {
-    //   type: DataTypes.TEXT,
-    //   allowNull: true,
-    // },
-    // ext_url: {
-    //   type: DataTypes.TEXT,
-    //   allowNull: true,
-    // },
+    extension_url: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
     artist: {
       type: DataTypes.STRING,
       allowNull: false,
