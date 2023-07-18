@@ -1,17 +1,19 @@
 {{!-- Profile Page --}}
-<main id="profile">
-    <div id="profile-header">
-        <img src="/img/profile.svg">
-        <h1>{{user.dataValues.username}}</h1>
+<main id="profile" class="shadow flex-center-x">
+    <div id="profile-header" class="flex-center">
+        <div id="profile-photo-container" class="flex-center">
+            <img id= "profile-photo" class="shadow" src="/img/user.svg">
+        </div>
+        <div id="username-container" class="flex-center">
+            <h1>{{user.dataValues.username}}</h1>
+        </div>
     </div>
+    
     <div id="profile-body">
         <div id="favorites">
             <h2>Favorites</h2>
             <div>
             </div>
-        </div>
-        <div>
-            <h2></h2>
         </div>
     </div>
 </main>

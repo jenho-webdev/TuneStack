@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="733.33716"
+   height="733.33716"
+   viewBox="0 0 44.000229 44.000229"
+   version="1.1"
+   id="svg11"
+   sodipodi:docname="play.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs15" />
+  <sodipodi:namedview
+     id="namedview13"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.2525"
+     inkscape:cx="354.49102"
+     inkscape:cy="366.46707"
+     inkscape:window-width="3440"
+     inkscape:window-height="1369"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_2" />
+  <title
+     id="title2">play-circle-solid</title>
+  <g
+     id="Layer_2"
+     data-name="Layer 2"
+     transform="translate(-2,-1.9997706)">
+    <g
+       id="invisible_box"
+       data-name="invisible box">
+      <rect
+         width="48"
+         height="48"
+         fill="none"
+         id="rect4"
+         x="0"
+         y="0" />
+    </g>
+    <g
+       id="icons_Q2"
+       data-name="icons Q2"
+       style="fill:#6e7f9a;fill-opacity:1">
+      <path
+         d="M 24,2 A 22,22 0 1 0 46,24 21.9,21.9 0 0 0 24,2 Z M 34.6,24.7 18.1,34.8 C 17.5,35.2 17,34.9 17,34.2 V 13.8 c 0,-0.7 0.5,-1 1.1,-0.6 l 16.5,10.1 a 0.8,0.8 0 0 1 0,1.4 z"
+         id="path7"
+         style="fill:#6e7f9a;fill-opacity:1" />
+    </g>
+  </g>
+</svg>

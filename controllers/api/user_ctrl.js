@@ -20,15 +20,17 @@ router.post('/signup', async (req, res) => {
 
     // Automatically log in the user after registration
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.user_id = userData.user_id;
       req.session.logged_in = true;
+      res.status(200).json({ user: userData, message: 'You are now logged in.' });
+    });
 
       res
         .status(200)
         .json({ user: userData, message: 'You are now logged in.' });
-    });
+
   } catch (err) {
-    res.status(500).json({ error: err, message: 'Failed to create new user.' });
+    res.status(500).json({ error: err, message: 'Failed to sign up.' });
   }
 });
 
@@ -92,7 +94,7 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.user_id = userData.user_id;
       req.session.logged_in = true;
       res
         .status(200)
