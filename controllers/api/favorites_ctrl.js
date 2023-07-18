@@ -6,61 +6,79 @@ const { Favorite, User, Album } = require('../../models');
 // Get all user's favorites
 router.get('/', async (req, res) => {
   try {
-    Favorite.findAll({
+    const favorData = Favorite.findAll({
       where: {
         user_id: req.session.user_id,
       },
     });
-  } catch (err) {}
+
+    res.status(200).json(favorData);
+  } catch (err) {
+    res
+      .status(500)
+      .json({ error: err, message: 'Failed to retrieve all favorites.' });
+  }
 });
 
-// Get one user's favorite
+// Get one user's favorite by id
 router.get('/:id', async (req, res) => {
   try {
-    const favorite = await Favorite.findOne({
+    const favorData = await Favorite.findOne({
       where: {
+        user_id: req.session.user_id,
         id: req.params.id,
       },
-
-  })
-  } catch (err) {}
+    });
+    res.status(200).json(favorData);
+  } catch (err) {
+    res.status(500).json({
+      error: err,
+      message: `Failed to retrieve ${username}'s favorite #${req.params.id}`,
+    });
+  }
 });
 
 // Create new favorite
 router.post('/', async (req, res) => {
-    /* req.body should look like this...
+  /* req.body should look like this...
       {
         album_id: "1",
       }
     */
-    try {
-  const newFavor = await Favorite.create({
-        ...req.body,    
-        user_id: req.session.user_id,
-      });
+  try {
+    const newFavor = await Favorite.create({
+      album_id: req.session.album_id,
+      user_id: req.session.user_id,
+    });
 
-      res.status(200).json(newArticle);
-    } catch (err) {
-      res.status(400).json(err);
+    res.status(200).json(newFavor);
+  } catch (err) {
+    res.status(500).json({
+      error: err,
+      message: `Failed to create new favorite`,
+    });
   }
 });
 
 // Update user favorite
 router.delete('/:id', async (req, res) => {
   try {
-    const favoriteData = await Favorite.destroy({
+    const favorData = await Favorite.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!favoriteData) {
-      res.status(404).json({ message: 'Favor not found' });
+    if (!favorData) {
+      res.status(404).json({ message: 'Favor not found and failed to delete' });
       return;
     }
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({
+      error: err,
+      message: `Failed to delete favorite # ${req.params.id}`,
+    });
   }
 });
 
