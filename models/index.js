@@ -5,12 +5,16 @@ const Favorite = require('./Favorite.js');
 
 // Users can create many album entries (user-id inseted into Album table)
 User.hasMany(Album, {
-// Specify the foreign key column name explicitly.
-  foreignKey: 'user_id', 
+  // Specify the foreign key column name explicitly.
+  foreignKey: 'creator_id', 
+  // Specify the source key column name in the User table
+  sourceKey: 'user_id', 
 });
 // Album belongsTo User (Important to create both associations to call methods from either side.)
 Album.belongsTo(User, {
-  foreignKey: 'user_id',
+  foreignKey: 'creator_id',
+  // Specify the source key column name in the User table
+  sourceKey: 'user_id', 
 });
 
 // Users can have many favorites (insert user_id column into favorite table)
