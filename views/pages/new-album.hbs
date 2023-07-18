@@ -1,43 +1,58 @@
 {{!-- New Album Page --}}
-<main>
-    <h2>Add Album</h2>
-    <form action="" method="post" enctype="">
-        <label for="title">Album Title:</label>
-        <input type="text" id="title" name="title" required>
-        <br><br>
+<main id="new-album" class="flex-center shadow">
+    <div id="new-album-card">
+        <h2>Add a New Album</h2>
 
-        <label for="cloudinary_url">Cloudinary URL:</label>
-        <input type="text" id="cloudinary_url" name="cloudinary_url" required>
-        <br><br>
+        <div class="divider"></div>
 
-        <label for="external_link">Extrenal Link:</label>
-        <input type="text" id="external_link" name="external_link" required>
-        <br><br>
+        <form>
+            <div class="row">
+                <div class="label"><label for="title">Album Title:</label></div>
+                <input type="text" id="title" name="title" required>
+            </div>
+            
+            <div class="row">
+                <div class="label"><label for="cloudinary_url">Cloudinary URL:</label></div>
+                <input type="text" id="cloudinary_url" name="cloudinary_url" required>
+            </div>
+            
+            <div class="row">
+                <div class="label"><label for="external_link">External Link:</label></div>
+                <input type="text" id="external_link" name="external_link" required>
+            </div>
 
-        <label for="year">Year:</label>
-        <input type="text" id="year" name="year" required>
-        <br><br>
+            <div class="row">
+                <div class="label"><label for="year">Year:</label></div>
+                <input type="text" id="year" name="year" required>
+            </div>
+            
+            <div class="row">
+                <div class="label"><label for="artist">Artist:</label></div>
+                <input type="text" id="artist" name="artist" required>
+            </div>
+            
+            <div class="row">
+                <div class="label"><label for="genre">Genre:</label></div>
+                <input type="text" id="genre" name="genre" required>
+            </div>          
 
-        <label for="artist">Artist:</label>
-        <input type="text" id="artist" name="artist" required>
-        <br><br>
+            <div class="row">
+                <div class="label"><label for="description">Description:</label></div>
+                <textarea id="description" name="description" rows="4" cols="50"></textarea>
+            </div>
+            
+            <div class="row">
+                <div class="label"><label for="image">Album Cover:</label></div>
+                <button id="upload_widget" class="cloudinary-button"> Upload Album Cover</button>
+            </div>
 
-        <label for="genre">Genre:</label>
-        <input type="text" id="genre" name="genre" required>
-        <br><br>
-
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" rows="4" cols="50"></textarea>
-        <br><br>
-
-        <label for="image">Album Cover:</label>
-        <button id="upload_widget" class="cloudinary-button"> Upload </button>
-        <br><br>
-
-        <button id="submit_album" class=""> Submit New Album </button>
-        <br><br>
-
-    </form>
+            <div class="divider"></div>
+            
+            <div id="new-album-footer">
+                <button id="submit-album" class="shadow"> Submit</button>
+            </div>
+        </form>
+    </div>
 </main>
 
 

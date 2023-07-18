@@ -1,0 +1,79 @@
+#new-album {
+    color: var(--white);
+    padding: 80px 0 90px 0;
+}
+
+#new-album h2 {
+    margin: 0;
+    font-size: 24px;
+    padding-top: 20px;
+}
+
+#new-album-card {
+    background: var(--darkPurple);
+    width: 350px;
+    border-radius: 10px;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    gap: 20px;
+}
+
+.label {
+    color: var(--lightPurple);
+    width: 100%;
+    padding: 0 0 5px 20px;
+}
+
+form {
+    width: 100%;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    gap: 10px;
+}
+
+.row {
+    width: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+
+input, textarea {
+    width: 90%;
+}
+
+form :nth-child(8) {
+    padding-bottom: 10px;
+}
+
+.cloudinary-button {
+    border: none;
+    background: none;
+}
+
+#submit-album {
+    padding: 0;
+    border: none;
+    height: 50px; width: 120px;
+    margin-top: -5px;
+    background: var(--lightBlue);
+    border-radius: 5px;
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    transition: .2s;
+}
+
+#submit-album:hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+    transition: .1s;
+}
+
+.divider {
+    height: 4px;
+    width: 95%;
+    background: var(--purple);
+}
+
+#new-album-footer {
+    padding: 20px 0 20px 0;
+}
