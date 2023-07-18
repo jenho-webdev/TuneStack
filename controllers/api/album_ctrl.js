@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
 //    "genre": ""
 // }
 
-reference_url: router.post('/', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newAlbum = await Album.create({
       ...req.body,
@@ -54,6 +54,28 @@ router.get('/', async (req, res) => {
     res
       .status(500)
       .json({ error: err, message: 'Failed to retrieve all albums.' });
+  }
+});
+
+//Get user created album records
+router.get('/myAlbums', withAuth, async (req, res) => {
+  try {
+    const albumData = await Album.findAll({
+      where: {
+        creator_id: req.session.user_id,
+      },
+    });
+
+    if (!albumData) {
+      res.status(404).json({ message: 'Album(s) not found.' });
+      return;
+    }
+
+    res.status(200).json(albumData);
+  } catch (err) {
+    res
+      .status(500)
+      .json({ error: err, message: 'Failed to retrieve user created albums.' });
   }
 });
 
