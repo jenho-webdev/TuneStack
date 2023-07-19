@@ -20,8 +20,8 @@ router.post('/signup', async (req, res) => {
 
     // Automatically log in the user after registration
     req.session.save(() => {
-      req.session.user_id = userData.user_id;
-      req.session.logged_in = true;
+      res.session.user_id = userData.user_id;
+      res.session.logged_in = true;
       res
         .status(200)
         .json({ user: userData, message: 'You are now logged in.' });

@@ -11,8 +11,19 @@ router.get('/', async (req, res) => {
         user_id: req.session.user_id,
       },
     });
-
-    res.status(200).json(favorData);
+    if (!favorData) {
+      res
+        .status(404)
+        .json({ message: 'Favors not found', session: req.session });
+      return;
+    }
+    res
+      .status(200)
+      .json({
+        Data: favorData,
+        userID: req.session.user_id,
+        session: req.session,
+      });
   } catch (err) {
     res
       .status(500)
@@ -29,6 +40,10 @@ router.get('/:id', async (req, res) => {
         id: req.params.id,
       },
     });
+    if (!favorData) {
+      res.status(404).json({ message: 'Favor not found' });
+      return;
+    }
     res.status(200).json(favorData);
   } catch (err) {
     res.status(500).json({
@@ -42,7 +57,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   /* req.body should look like this...
       {
-        album_id: "1",
+        "album_id": "1"
       }
     */
   try {
@@ -51,7 +66,10 @@ router.post('/', async (req, res) => {
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newFavor);
+    res.status(200).json({
+      Data: newFavor,
+      message: `favor created successfully for ${req.session.user_id}.`,
+    });
   } catch (err) {
     res.status(500).json({
       error: err,
