@@ -21,6 +21,32 @@ router.get('/', async (req, res) => {
   }
 });
 
+//Get user created album records
+router.get('/myAlbums', withAuth, async (req, res) => {
+  try {
+    const albumData = await Album.findAll({
+      where: {
+        creator_id: req.session.user_id,
+      },
+    });
+
+    if (!albumData) {
+      res.status(404).json({
+        message: 'Album(s) not found.',
+        user: req.session,
+        user_id: req.session.user_id,
+      });
+      return;
+    }
+
+    res.status(200).json(albumData);
+  } catch (err) {
+    res
+      .status(500)
+      .json({ error: err, message: 'Failed to retrieve user created albums.' });
+  }
+});
+
 // Get one album
 router.get('/:id', async (req, res) => {
   try {
@@ -41,31 +67,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-//Get user created album records
-router.get('/myAlbums', withAuth, async (req, res) => {
-  try {
-    const albumData = await Album.findAll({
-      where: {
-        user_id: req.session.user_id,
-      },
-    });
 
-    if (!albumData) {
-      res.status(404).json({
-        message: 'Album(s) not found.',
-        user: req.session,
-        user_id: req.session.user_id,
-      });
-      return;
-    }
-
-    res.status(200).json(albumData);
-  } catch (err) {
-    res
-      .status(500)
-      .json({ error: err, message: 'Failed to retrieve user created albums.' });
-  }
-});
 
 //Create new album
 
