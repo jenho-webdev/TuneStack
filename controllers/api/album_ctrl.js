@@ -45,10 +45,16 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-// Get all albums
-router.get('/', async (req, res) => {
+// Get one album
+router.get('/:id', async (req, res) => {
   try {
-    const albumData = await Album.findAll({});
+    const albumData = await Album.findOne({
+      where: { album_id: req.params.id },
+    });
+    if (!albumData) {
+      res.status(404).json({ message: 'Album not found.' });
+      return;
+    }
     res.status(200).json(albumData);
   } catch (err) {
     res
@@ -84,7 +90,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   try {
     const albumData = await Album.destroy({
       where: {
-        id: req.params.id,
+        album_id: req.params.id,
       },
     });
 
@@ -104,7 +110,7 @@ router.put('/:id', withAuth, async (req, res) => {
   try {
     const albumData = await Album.update(req.body, {
       where: {
-        id: req.params.id,
+        album_id: req.params.id,
       },
     });
 
