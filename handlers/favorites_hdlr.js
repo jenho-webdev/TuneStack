@@ -5,7 +5,7 @@ const favorite = async (event) => {
     const albumId = favoriteButton.dataset.id;
 
     try {
-        const response = await fetch(`/api/favorites`, {
+        const response = await fetch(`/api/favorites/${albumId}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -17,14 +17,12 @@ const favorite = async (event) => {
             throw new Error("Failed to add favorite.");
         }
 
-        // TODO: show album is favorited
-        // TODO:favoriteButton.classList.add("favorited");
     } catch (err) {
         console.error(err);
     }
 };
 
-// Get all the "favorite" buttons
+// Get all the favorite buttons
 const favoriteButtons = document.querySelectorAll(".favorite-button");
 
 // For each button, attach the click event handler

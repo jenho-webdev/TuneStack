@@ -55,27 +55,48 @@ router.get('/:id', withAuth, async (req, res) => {
   }
 });
 
-// Create new favorite
-router.post('/', withAuth, async (req, res) => {
+// Update user favorite (Add/Delete favorite)
+router.post('/:id', withAuth, async (req, res) => {
   /* req.body should look like this...
       {
         "album_id": "1"
       }
     */
   try {
+    const albumId = req.params.id;
+    const userId = req.session.user_id;
+
+    // Check if the album is already favorited by the user
+    const existingFavor = await Favorite.findOne({
+      where: {
+        user_id: userId,
+        album_id: albumId,
+      },
+    });
+
+    if (existingFavor) {
+      // If the album is already favorited, delete it from favorites
+      await existingFavor.destroy();
+
+      return res.status(200).json({
+        message: `Album ${albumId} has been removed from your favorites.`,
+      });
+    }
+
+    // If the album is not favorited, create a new favorite
     const newFavor = await Favorite.create({
-      ...req.body,
-      user_id: req.session.user_id,
+      album_id: albumId,
+      user_id: userId,
     });
 
     res.status(200).json({
       newFavorData: newFavor,
-      message: `favor created successfully for ${req.session.user_id} on album ${req.body.album_id}.`,
+      message: `Album ${albumId} has been added to your favorites.`,
     });
   } catch (err) {
     res.status(500).json({
       error: err,
-      message: `Failed to create new favorite for user ${req.session.user_id} on ${req.body.album_id}`,
+      message: `Failed to update favorites for user ${req.session.user_id}.`,
     });
   }
 });
