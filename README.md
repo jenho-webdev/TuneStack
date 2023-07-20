@@ -25,12 +25,12 @@ TuneStack web app is a web application that allows users to build a library of t
 - Sequelize (with MySQL2)
 - Bcrypt
 - Dotenv
+- Cloudinary (Images uploading widget and hosting)
 
 ## Live Demo
 
-Check out the live demo of the app:
-[![Heroku App](https://img.shields.io/badge/Heroku-Deployed-blueviolet?logo=heroku)](https://tunestack-v1-74649ac6d540.herokuapp.com/)
-Live Demo Slides: [Here](https://docs.google.com/presentation/d/1g0wAdp1-VNkJHB2Vd_clewWChCGXzdufYPJX2WoHx78/edit?usp=sharing)
+Check out the live demo of the app: [![Heroku App](https://img.shields.io/badge/Heroku-Deployed-blueviolet?logo=heroku)](https://tunestack-v1-74649ac6d540.herokuapp.com/)
+Presentation Slides: [![Here](https://img.shields.io/badge/Google_Sheets-Deployed-blueviolet?logo=GoogleSheets)](https://docs.google.com/presentation/d/1g0wAdp1-VNkJHB2Vd_clewWChCGXzdufYPJX2WoHx78/edit?usp=sharing)
 
 Login Page:
 ![Login Page](./public//img/login_page.png)
@@ -74,9 +74,9 @@ Sign up Page:
 
 ## Current Contributors
 
-[![Chandler Chilvers](https://img.shields.io/badge/cwchilvers--blue?style=flat&logo=GitHub&link=https://github.com/cwchilvers/)](https://github.com/cwchilvers)
-[![Jorge Duarte](https://img.shields.io/badge/saduhub--blue?style=flat&logo=GitHub&link=https://github.com/cwchilvers/)](https://github.com/saduhub)
-[![Jen Ho](https://img.shields.io/badge/jenhowebdev--purple?style=flat&logo=GitHub&link=https://github.com/jenho-webdev)](https://github.com/jenho-webdev)
+[![Chandler Chilvers](https://img.shields.io/badge/Github-cwchilvers-blue?style=flat&logo=GitHub&link=https://github.com/cwchilvers/)](https://github.com/cwchilvers)
+[![Jorge Duarte](https://img.shields.io/badge/Github-saduhub-blue?style=flat&logo=GitHub&link=https://github.com/cwchilvers/)](https://github.com/saduhub)
+[![Jen Ho](https://img.shields.io/badge/Github-jenho--webdev-purple?style=flat&logo=GitHub&link=https://github.com/jenho-webdev)](https://github.com/jenho-webdev)
   
 <!-- Add more contributors here -->
 
