@@ -8,9 +8,8 @@ module.exports = async (req, res) => {
             return;
         }
 
-        // Get 10 (max) most recent album uploads
+        // Get all albums and sort by most recent
         const albums = await Album.findAll({
-            limit: 10,
             order: [['createdAt', 'DESC']],
         });
 
@@ -32,6 +31,19 @@ module.exports = async (req, res) => {
         for (let i = 0; i < albums.length; i++) {
             if (albums[i].dataValues.cloudinary_url === '' || albums[i].dataValues.cloudinary_url.includes('https://example.com/')) {
                 albums[i].dataValues.cloudinary_url = '/img/album.svg';
+            }
+        }
+
+        // If album title is longer than 30 characters, limit to 30 characters and add ellipsis (ex. Bowie's Ziggy Stardust album)
+        for (let i = 0; i < albums.length; i++) {
+            const title = albums[i].dataValues.title;
+            if (title.length > 30) {
+                albums[i].dataValues.title = title.slice(0, 30);                            // Limit to 30 characters
+                const lastCharacter = albums[i].dataValues.title.charAt(29);                // Get last character
+                if (lastCharacter === ' ') {
+                    albums[i].dataValues.title = albums[i].dataValues.title.slice(0, 29);   // Remove space if last character is a space
+                }
+                albums[i].dataValues.title += '...';                                        // Add ellipsis
             }
         }
 

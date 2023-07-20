@@ -33,6 +33,19 @@ module.exports = async (req, res) => {
             }
         }
 
+        // If album title is longer than 30 characters, limit to 30 characters and add ellipsis (ex. Bowie's Ziggy Stardust album)
+        for (let i = 0; i < favorites.length; i++) {
+            const title = favorites[i].dataValues.album.dataValues.title;
+            if (title.length > 30) {
+                favorites[i].dataValues.album.dataValues.title = title.slice(0, 30);                            // Limit to 30 characters
+                const lastCharacter = favorites[i].dataValues.album.dataValues.title.charAt(29);                // Get last character
+                if (lastCharacter === ' ') {
+                    favorites[i].dataValues.album.dataValues.title = favorites[i].dataValues.album.dataValues.title.slice(0, 29);   // Remove space if last character is a space
+                }
+                favorites[i].dataValues.album.dataValues.title += '...'; // Add ellipsis
+            }
+        }
+
         // Render home page and pass data to view
         res.render('pages/profile', { 
             page: user.dataValues.username,     // Page title

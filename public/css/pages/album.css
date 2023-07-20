@@ -12,9 +12,10 @@
 
 #album-header {
     width: 100%;
-    height: 200px;
+    min-height: 200px;
     border-radius: 10px;
     gap: 15px;
+    padding: 20px 0;
 }
 
 #album-art {
@@ -82,6 +83,10 @@
     height: 60px;
     cursor: pointer;
     transition: .2s;
+}
+
+#album-footer {
+    padding-top: 15px;
 }
 
 #album-footer :nth-child(1):hover {
