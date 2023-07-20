@@ -3,6 +3,7 @@ module.exports = async (req, res) => {
         // If user is logged out, redirect to login page
         if(!req.session.logged_in) {
             res.redirect('/login');
+            return;
         }
 
         // Render home page and pass data to view

@@ -2,7 +2,12 @@
 
 let cloudinaryWidget = cloudinary.createUploadWidget(
     {
-    // environment variables cloudinary
+        // cloudName: process.env.CLOUD_NAME, 
+        // uploadPreset: process.env.UPLOAD_PRESET, 
+        // folder: process.env.CLOUD_FOLDER, 
+        cloudName: 'dx7bgdfut', 
+        uploadPreset: 'TuneStack', 
+        folder: 'TuneStack', 
     }, 
     (error, result) => { 
         console.log(error, result);
