@@ -26,8 +26,6 @@ router.post('/signup', async (req, res) => {
         .status(200)
         .json({ user: userData, message: 'You are now logged in.' });
     });
-
-    res.status(200).json({ user: userData, message: 'You are now logged in.' });
   } catch (err) {
     res.status(500).json({ error: err, message: 'Failed to sign up.' });
   }
@@ -100,7 +98,7 @@ router.post('/login', async (req, res) => {
         .json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
-    res.status(500).json({ error: err, message: 'Failed to login user.' });
+    res.status(500).json({ error: err, message: `${err.errors[1].message}` });
   }
 });
 
