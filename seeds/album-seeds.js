@@ -4,8 +4,8 @@ const { Album } = require('../models');
 const albumData = [
   {
     title: "Thriller",
-    cloudinary_url: "https://example.com/thriller",
-    extension_url: "https://example.com/thriller",
+    cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689879390/TuneStack/lfzde3vxerxitvi6taxa.png",
+    extension_url: "https://www.michaeljackson.com/video/thriller-video-2/",
     artist: "Michael Jackson",
     year: "1982",
     genre: "Pop",
