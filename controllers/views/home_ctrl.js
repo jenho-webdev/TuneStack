@@ -13,8 +13,6 @@ module.exports = async (req, res) => {
             order: [['createdAt', 'DESC']],
         });
 
-        console.log(req.session.user_id);
-
         // Render home page and pass data to view
         res.render('pages/home', { 
             page: 'Home',                       // Page title
