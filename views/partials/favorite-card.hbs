@@ -1,7 +1,7 @@
 {{!-- Favorite --}}
 <div class="item shadow" href="{{dataValues.album.dataValues.extension_url}}">
     <div class="album-art">
-        <a href="/albums/{{dataValues.album.dataValues.album_id}}" class="flex-center"><img src="/img/album.svg" alt="Album Art"></a>
+        <a href="/albums/{{dataValues.album.dataValues.album_id}}" class="flex-center"><img src="{{dataValues.album.dataValues.cloudinary_url}}" alt="Album Art"></a>
     </div>
     <a href="{{dataValues.album.dataValues.extension_url}}"><div class="item-details">
         <p class="item-title">{{dataValues.album.dataValues.title}}</p>
