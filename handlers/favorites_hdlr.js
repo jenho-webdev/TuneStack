@@ -17,6 +17,8 @@ const favorite = async (event) => {
             throw new Error("Failed to add favorite.");
         }
 
+        favoriteButton.classList.toggle("favorited");
+
     } catch (err) {
         console.error(err);
     }

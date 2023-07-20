@@ -87,3 +87,7 @@ form :nth-child(8) {
 #new-album-footer {
     padding: 20px 0;
 }
+
+.cloudinary-row {
+    display: none;
+}
