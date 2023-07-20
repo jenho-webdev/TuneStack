@@ -3,6 +3,7 @@ module.exports = async (req, res) => {
         // If user is logged in, redirect to home page
         if(req.session.logged_in) {
             res.redirect('/');
+            return;
         }
 
         // Render login page and pass data to view
@@ -12,6 +13,8 @@ module.exports = async (req, res) => {
         });
 
     } catch (err) {
+        console.log({err});
         res.status(500).json({ error: 'Failed to load Login page' });
+        
     }
 };
