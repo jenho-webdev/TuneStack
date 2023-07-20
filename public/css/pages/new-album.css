@@ -4,8 +4,8 @@
 }
 
 #new-album h2 {
-    margin: 0;
     font-size: 24px;
+    margin: 0;
     padding-top: 20px;
 }
 
@@ -13,31 +13,40 @@
     background: var(--darkPurple);
     width: 350px;
     border-radius: 10px;
-    display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
 .label {
-    color: var(--lightPurple);
     width: 100%;
+    color: var(--lightPurple);
     padding: 0 0 5px 20px;
 }
 
 form {
     width: 100%;
-    display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
 }
 
 .row {
     width: 100%;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-input, textarea {
+input,
+textarea {
     width: 90%;
+    resize: none;
 }
 
 form :nth-child(8) {
@@ -52,7 +61,8 @@ form :nth-child(8) {
 #submit-album {
     padding: 0;
     border: none;
-    height: 50px; width: 120px;
+    height: 50px;
+    width: 120px;
     margin-top: -5px;
     background: var(--lightBlue);
     border-radius: 5px;
@@ -75,5 +85,9 @@ form :nth-child(8) {
 }
 
 #new-album-footer {
-    padding: 20px 0 20px 0;
+    padding: 20px 0;
+}
+
+.cloudinary-row {
+    display: none;
 }
