@@ -1,7 +1,8 @@
 # TuneStack
 
-[![Heroku App](https://img.shields.io/badge/Heroku-Deployed-blueviolet?logo=heroku)](https://placeholder)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://placeholder)
+[![Heroku App](https://img.shields.io/badge/Heroku-Deployed-blueviolet?logo=heroku)](https://tunestack-v1-74649ac6d540.herokuapp.com/)
+[![Github Repo](https://img.shields.io/badge/GitHub_Repo-Deployed-blue)]((https://github.com/jenho-webdev/TuneStack))
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://placeholder)
 
 ## Description
 
@@ -27,7 +28,14 @@ TuneStack web app is a web application that allows users to build a library of t
 
 ## Live Demo
 
-Check out the live demo of the app [here](https://heroku-app-url).
+Check out the live demo of the app: [Here](https://tunestack-v1-74649ac6d540.herokuapp.com/).
+Live Demo Slides: [Here](https://docs.google.com/presentation/d/1g0wAdp1-VNkJHB2Vd_clewWChCGXzdufYPJX2WoHx78/edit?usp=sharing)
+
+Login Page:
+![Login Page](./public//img/Login_Page.png)
+
+Sign up Page:
+![Sign-Up Page](./public//img/signup_Page.png)
 
 ## Installation
 
@@ -57,11 +65,11 @@ Check out the live demo of the app [here](https://heroku-app-url).
     npm start
     ```
 
-6. Open your browser and visit <http://localhost:3000> to access the app.
+6. Open your browser and visit ```<http://localhost:3000>``` to access the app.
 
 ## Deployment
 
-[![Heroku App](https://img.shields.io/badge/Heroku-Deployed-blueviolet?logo=heroku)](https://placeholder)
+[![Heroku App](https://img.shields.io/badge/Heroku-Deployed-blueviolet?logo=heroku)](https://tunestack-v1-74649ac6d540.herokuapp.com/)
 
 ## Current Contributors
 
@@ -90,4 +98,3 @@ The creators and contributors of this project are not liable for any damages, da
 It is the responsibility of the deployer and users of this app to ensure proper security measures are implemented and that sensitive information is handled securely.
 
 Always exercise caution when using this or any other web application that involves personal or sensitive data.
-
