@@ -22,7 +22,17 @@ let cloudinaryWidget = cloudinary.createUploadWidget(
     }
 );
 
-document.getElementById('upload_widget').addEventListener('click', function() {
-    cloudinaryWidget.open();
-}, false);
+// Confirm that new album form is present before assigning event listener.
+document.addEventListener('DOMContentLoaded', function() {
+
+    let newAlbumForm = document.getElementById('new-album-form')
+
+    if (newAlbumForm) {
+        document.getElementById('upload_widget').addEventListener('click', function(event) {
+            event.preventDefault();
+            cloudinaryWidget.open();
+        }, false);
+    }
+})
+
 
