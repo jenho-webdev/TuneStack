@@ -1,7 +1,4 @@
 {{!-- Album --}}
-
-{{log dataValues}}
-
 <div class="item shadow" href="{{dataValues.extension_url}}">
     <div class="album-art">
         <a href="/albums/{{dataValues.album_id}}" class="flex-center"><img src="/img/album.svg" alt="Album Art"></a>
@@ -12,6 +9,6 @@
         <p class="item-genre">{{dataValues.genre}}</p>
     </div></a>
     <div class="favorite">
-        <img src="/img/heart.svg" class="favorite-button" data-id="{{dataValues.album_id}}">
+        <img src="/img/heart.svg" class="favorite-button {{#if dataValues.isFavorited}}favorited{{/if}}" data-id="{{dataValues.album_id}}">
     </div>
 </div>

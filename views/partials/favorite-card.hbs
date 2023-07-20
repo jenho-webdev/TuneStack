@@ -9,6 +9,6 @@
         <p class="item-genre">{{dataValues.album.dataValues.genre}}</p>
     </div></a>
     <div class="favorite">
-        <img src="/img/heart.svg" class="favorite-button" data-id="{{dataValues.album_id}}">
+        <img src="/img/heart.svg" class="favorite-button {{#if dataValues.isFavorited}}favorited{{/if}}" data-id="{{dataValues.album_id}}">
     </div>
 </div>

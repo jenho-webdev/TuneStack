@@ -77,6 +77,11 @@
     transition: .1s;
 }
 
+.favorited {
+    filter: brightness(1.3) saturate(2) hue-rotate(50deg);
+    transition: .1s;
+}
+
 /* Two columns at resolutions above mobile */
 @media (min-width: 768px) {
     #home {

@@ -20,6 +20,9 @@ module.exports = async (req, res) => {
         // Get all album info for each favorite
         for (let i = 0; i < favorites.length; i++) {
             favorites[i].dataValues.album = await Album.findByPk(favorites[i].dataValues.album_id);
+
+            // Mark all as favorited albums
+            favorites[i].dataValues.isFavorited = true;
         }
 
         // Render home page and pass data to view
@@ -33,6 +36,6 @@ module.exports = async (req, res) => {
         });
     
     } catch (err) {
-        res.status(500).json({ error: 'Fsailed to load User page' });
+        res.status(500).json({ error: 'Failed to load User page' });
     }
 };
