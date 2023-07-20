@@ -12,9 +12,10 @@
 
 #album-header {
     width: 100%;
-    height: 200px;
+    min-height: 200px;
     border-radius: 10px;
     gap: 15px;
+    padding: 20px 0;
 }
 
 #album-art {
@@ -84,6 +85,10 @@
     transition: .2s;
 }
 
+#album-footer {
+    padding-top: 15px;
+}
+
 #album-footer :nth-child(1):hover {
     filter: brightness(1.3) saturate(0.75);
     transition: .1s;
@@ -97,4 +102,17 @@
 .favorited {
     filter: brightness(1.3) saturate(2) hue-rotate(50deg);
     transition: .1s;
+}
+
+@media (min-width: 768px) {
+    #album-card {
+        width: 600px;
+        background: var(--darkPurple);
+        border-radius: 10px;
+    }
+
+    #album-art {
+        width: 350px;
+        padding-left: 10px;
+    }
 }
