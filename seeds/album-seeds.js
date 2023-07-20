@@ -5,7 +5,7 @@ const albumData = [
   {
     title: "Thriller",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689879390/TuneStack/lfzde3vxerxitvi6taxa.png",
-    extension_url: "https://www.michaeljackson.com/video/thriller-video-2/",
+    extension_url: "https://www.youtube.com/watch?v=8KWf_-ofYgI&list=PLmKxR1vlf4cyHwtOvWxd1nt3B0U9E2pH7",
     artist: "Michael Jackson",
     year: "1982",
     genre: "Pop",
@@ -15,7 +15,7 @@ const albumData = [
   {
     title: "Abbey Road",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689881309/TuneStack/vxllubujrjbvxmf21gfp.jpg",
-    extension_url: "https://www.tripadvisor.com/Attraction_Review-g186338-d190102-Reviews-Abbey_Road-London_England.html",
+    extension_url: "https://www.youtube.com/watch?v=oolpPmuK2I8&list=PLPMRFtA0BgE6ce0olKAwrKffd-V170IEC",
     artist: "The Beatles",
     year: "1969",
     genre: "Rock",
@@ -25,7 +25,7 @@ const albumData = [
   {
     title: "The Dark Side of the Moon",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689881412/TuneStack/Dark_Side_of_the_Moon_edddzf.png",
-    extension_url: "https://www.amazon.com/Dark-Side-Moon-Pink-Floyd/dp/B000002U82",
+    extension_url: "https://www.youtube.com/watch?v=HW-lXjOyUWo&list=PL3PhWT10BW3Urh8ZXXpuU9h526ChwgWKy",
     artist: "Pink Floyd",
     year: "1973",
     genre: "Progressive Rock",
@@ -35,7 +35,7 @@ const albumData = [
   {
     title: "Back in Black",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689882165/TuneStack/440px-ACDC_Back_in_Black_cover.svg_phzry6.png",
-    extension_url: "https://genius.com/Ac-dc-back-in-black-lyrics",
+    extension_url: "https://www.youtube.com/watch?v=GL56LY6fE0E&list=PLzqsoINOR51ZNYuuINo2XVKJu9PQtAcdK",
     artist: "AC/DC",
     year: "1980",
     genre: "Hard Rock",
@@ -45,7 +45,7 @@ const albumData = [
   {
     title: "Hotel California",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689882270/TuneStack/https_3A_2F_2Fimages.genius.com_2F6c7e025561819a4af1476af223c1a7f8.600x600x1_yowh68.jpg",
-    extension_url: "https://genius.com/Eagles-hotel-california-lyrics",
+    extension_url: "https://www.youtube.com/watch?v=BciS5krYL80&list=PLjkSDuIKgbX0Dp_D49TwfS0qPpGZWqyW8&index=2",
     artist: "Eagles",
     year: "1976",
     genre: "Rock",
@@ -55,7 +55,7 @@ const albumData = [
   {
     title: "Nevermind",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689882338/TuneStack/NirvanaNevermindalbumcover_hqepzx.jpg",
-    extension_url: "https://www.nirvana.com/album/nevermind/",
+    extension_url: "https://www.youtube.com/watch?v=7TDeBi34OtE&list=PLMxy067kbpQjRXmNGao7pvVoFaCTIZRze",
     artist: "Nirvana",
     year: "1991",
     genre: "Grunge",
@@ -65,7 +65,7 @@ const albumData = [
   {
     title: "The Joshua Tree",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689882419/TuneStack/The_Joshua_Tree_vprup9.png",
-    extension_url: "https://www.amazon.com/Joshua-Tree-U2/dp/B000001FS3",
+    extension_url: "https://www.youtube.com/watch?v=WfunypXsBO4&list=PLnYID47-RfH6oJe4BAs-JP8zCD-c5CKxX",
     artist: "U2",
     year: "1987",
     genre: "Rock",
@@ -75,7 +75,7 @@ const albumData = [
   {
     title: "Rumours",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689882508/TuneStack/FMacRumours_swqgsk.png",
-    extension_url: "https://www.allmusic.com/album/rumours-mw0000193833",
+    extension_url: "https://www.youtube.com/watch?v=SLlYUlS_Awo&list=PLpg0EOoO2vdUxDyiIfZGjwfI8fh6JRvg6",
     artist: "Fleetwood Mac",
     year: "1977",
     genre: "Rock",
@@ -85,7 +85,7 @@ const albumData = [
   {
     title: "Born to Run",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689882623/TuneStack/Born_to_Run__28Front_Cover_29_lef2qe.jpg",
-    extension_url: "https://en.wikipedia.org/wiki/Born_to_Run",
+    extension_url: "https://www.youtube.com/watch?v=W2X0Gf9jfz8&list=PLiN-7mukU_RERSYl0eVI_Qdsk2i7mlCBo",
     artist: "Bruce Springsteen",
     year: "1975",
     genre: "Rock",
@@ -95,7 +95,7 @@ const albumData = [
   {
     title: "Led Zeppelin IV",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689882723/TuneStack/Led_Zeppelin_-_Led_Zeppelin_IV_ezkor4.jpg",
-    extension_url: "https://www.discogs.com/master/4300-Led-Zeppelin-Untitled-",
+    extension_url: "https://www.youtube.com/watch?v=Q0ifFtMCFv8&list=PLDUEjoBVMbh95b6IhSrBsJcX8wiAfBxUN",
     artist: "Led Zeppelin",
     year: "1971",
     genre: "Rock",
@@ -105,7 +105,7 @@ const albumData = [
   {
     title: "Sgt. Pepper's Lonely Hearts Club Band",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689882797/TuneStack/Sgt._Pepper_27s_Lonely_Hearts_Club_Band_qd8y2p.jpg",
-    extension_url: "https://www.thebeatles.com/sgt-peppers-lonely-hearts-club-band-0",
+    extension_url: "https://www.youtube.com/watch?v=VtXl8xAPAtA&list=PL3PhWT10BW3VDM5IcVodrdUpVIhU8f7Z-",
     artist: "The Beatles",
     year: "1967",
     genre: "Rock",
@@ -115,7 +115,7 @@ const albumData = [
   {
     title: "The Wall",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689882859/TuneStack/PinkFloydWallCoverOriginalNoText_fmjr3m.jpg",
-    extension_url: "https://open.spotify.com/album/5Dbax7G8SWrP9xyzkOvy2F",
+    extension_url: "https://www.youtube.com/watch?v=iLFwTqdsuxw&list=PLyDzU3p8FP24syYfTXpGqTDHsQhlxwllS",
     artist: "Pink Floyd",
     year: "1979",
     genre: "Progressive Rock",
@@ -125,7 +125,7 @@ const albumData = [
   {
     title: "Blackout",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689883077/TuneStack/Blackout__28Scorpions_album_-_cover_art_29_r7udo8.png",
-    extension_url: "https://www.discogs.com/master/29283-Scorpions-Blackout",
+    extension_url: "https://www.youtube.com/watch?v=akuNAFpZvxs&list=PLsT9douBcx98B2IqbPvhmiqtu_S0LCQrJ",
     artist: "Scorpions",
     year: "1982",
     genre: "Hard Rock",
@@ -135,7 +135,7 @@ const albumData = [
   {
     title: "Appetite for Destruction",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689883147/TuneStack/GunsnRosesAppetiteforDestructionalbumcover_oy1w5k.jpg",
-    extension_url: "https://www.amazon.com/Appetite-Destruction-Guns-N-Roses/dp/B000000OQF",
+    extension_url: "https://www.youtube.com/watch?v=0CNPR2qNzxk&list=PL6ogdCG3tAWiPhX1-iTHcvnsO2ek1nlJl",
     artist: "Guns N' Roses",
     year: "1987",
     genre: "Hard Rock",
@@ -145,7 +145,7 @@ const albumData = [
   {
     title: "Highway to Hell",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689883239/TuneStack/Acdc_Highway_to_Hell_nqe3s6.jpg",
-    extension_url: "https://genius.com/Ac-dc-highway-to-hell-lyrics",
+    extension_url: "https://www.youtube.com/watch?v=ikFFVfObwss&list=PLxGB9kNnluF766VGi9mOsgK1JJb7Rtf2f",
     artist: "AC/DC",
     year: "1979",
     genre: "Hard Rock",
@@ -155,7 +155,7 @@ const albumData = [
   {
     title: "Bad",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689883318/TuneStack/Michael_Jackson_-_Bad_mnq7jy.png",
-    extension_url: "https://www.michaeljackson.com/music/bad-1/",
+    extension_url: "https://www.youtube.com/watch?v=-DlMoJ2V6uk&list=PLs0odKA07LBbtymGe5ocr8fS75_JfFsmo",
     artist: "Michael Jackson",
     year: "1987",
     genre: "Pop",
@@ -165,7 +165,7 @@ const albumData = [
   {
     title: "The Rise and Fall of Ziggy Stardust and the Spiders from Mars",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689883382/TuneStack/ZiggyStardust_b62mtc.jpg",
-    extension_url: "https://www.allmusic.com/album/the-rise-and-fall-of-ziggy-stardust-and-the-spiders-from-mars-mw0000626129",
+    extension_url: "https://www.youtube.com/watch?v=2ObjtVdsV3I&list=PL6ogdCG3tAWiH0E0OF6d97Ahfrq2xz8fj",
     artist: "David Bowie",
     year: "1972",
     genre: "Rock",
@@ -175,7 +175,7 @@ const albumData = [
   {
     title: "Ride the Lightning",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689883462/TuneStack/Ridetl_vjwriu.png",
-    extension_url: "https://www.metallica.com/songs/ride-the-lightning.html",
+    extension_url: "https://www.youtube.com/watch?v=8zSODUOoE8w&list=PLlJ795H9y5aLoryGI_YiNi0MqVncrooZC",
     artist: "Metallica",
     year: "1984",
     genre: "Thrash Metal",
@@ -185,7 +185,7 @@ const albumData = [
   {
     title: "Purple Rain",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689883544/TuneStack/Princepurplerain_td0jeb.jpg",
-    extension_url: "https://discography.prince.com/albums/purple-rain",
+    extension_url: "https://www.youtube.com/watch?v=eCM2dEWGf-o&list=PL6ogdCG3tAWjpHzvou7cgdJGFDadw49Vk",
     artist: "Prince",
     year: "1984",
     genre: "Pop, Rock, R&B",
@@ -195,7 +195,7 @@ const albumData = [
   {
     title: "The Doors",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689883654/TuneStack/TheDoorsTheDoorsalbumcover_qtekzv.jpg",
-    extension_url: "https://thedoors.com/",
+    extension_url: "https://www.youtube.com/watch?v=NFeUko-lQHg&list=PLiN-7mukU_RHopba7ndH5EMvoac_iOeqv",
     artist: "The Doors",
     year: "1967",
     genre: "Psychedelic Rock",
@@ -209,7 +209,7 @@ const albumData = [
     genre: "Progressive Rock",
     description: "Breakfast in America is the sixth studio album by Supertramp, released in 1979.",
     cloudinary_url: "https://res.cloudinary.com/dx7bgdfut/image/upload/v1689883952/TuneStack/Supertramp_-_Breakfast_in_America_eosezz.jpg",
-    extension_url: "https://genius.com/Supertramp-breakfast-in-america-lyrics",
+    extension_url: "https://www.youtube.com/watch?v=hbqVPYZgK48&list=PLFqw6BaKB9yHlmVTR5RjXxEM8fcuK5oqj",
     creator_id: "4"
   },
 ];
