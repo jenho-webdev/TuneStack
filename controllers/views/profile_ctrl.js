@@ -26,6 +26,13 @@ module.exports = async (req, res) => {
             favorites[i].dataValues.isFavorited = true;
         }
 
+        // If album cloudinary_url is null or has "https://example.com/" in it's path name, replace with default image path
+        for (let i = 0; i < favorites.length; i++) {
+            if (favorites[i].dataValues.album.dataValues.cloudinary_url === '' || favorites[i].dataValues.album.dataValues.cloudinary_url.includes('https://example.com/')) {
+                favorites[i].dataValues.album.dataValues.cloudinary_url = '/img/album.svg';
+            }
+        }
+
         // Render home page and pass data to view
         res.render('pages/profile', { 
             page: user.dataValues.username,     // Page title
