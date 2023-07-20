@@ -1,29 +1,23 @@
 // Require User model.
 const { Favorite } = require('../models');
+
+// Function to generate a random number between min and max (inclusive).
+const getRandomNumber = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
+
 // Data to be seeded by bulk creation.
-const favoriteData = [
-    {
-      user_id: 1,
-      album_id: 2,
-    },
-    {
-      user_id: 1,
-      album_id: 5,
-    },
-    {
-      user_id: 2,
-      album_id: 3,
-    },
-    {
-      user_id: 3,
-      album_id: 1,
-    },
-    {
-      user_id: 3,
-      album_id: 4,
-    },
-  ];
-// Function that will seed all data to schema at once.
+const favoriteData = [];
+
+// Generate 30 data entries.
+for (let i = 0; i < 30; i++) {
+  favoriteData.push({
+    user_id: getRandomNumber(1, 5), // Assuming user_ids are between 1 and 3.
+    album_id: getRandomNumber(1, 20), // Assuming album_ids are between 1 and 5.
+  });
+}
+
+// Function that will seed all data to the schema at once.
 const seedFavorites = () => Favorite.bulkCreate(favoriteData);
-// Export function so that it can be used elsewhere.
+
+// Export the function so that it can be used elsewhere.
 module.exports = seedFavorites;
