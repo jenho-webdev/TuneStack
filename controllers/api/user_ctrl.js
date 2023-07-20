@@ -18,7 +18,7 @@ router.post('/signup', async (req, res) => {
       password: req.body.password,
     });
 
-    // Automatically log in the user after registration
+    // Automatically log in user after signing up
     req.session.save(() => {
       req.session.user_id = userData.user_id;
       req.session.logged_in = true;
@@ -27,7 +27,6 @@ router.post('/signup', async (req, res) => {
         .json({ user: userData, message: 'You are now logged in.' });
     });
 
-    res.status(200).json({ user: userData, message: 'You are now logged in.' });
   } catch (err) {
     res.status(500).json({ error: err, message: 'Failed to sign up.' });
   }

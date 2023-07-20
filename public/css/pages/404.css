@@ -1,8 +1,11 @@
 #card {
-    background: var(--purple); color: var(--white);
-    border-radius: 10px;
     width: 320px;
-    display: flex; flex-direction: column; align-items: center;
+    background: var(--purple);
+    color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #card h1 {
@@ -11,10 +14,11 @@
 }
 
 #card img {
-    margin-top: -25px;
     width: 80px;
+    margin-top: -25px;
 }
 
 #error-404 {
-    min-height: 100vh; width: 100vw;
+    min-height: 100vh;
+    width: 100vw;
 }

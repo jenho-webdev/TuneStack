@@ -1,22 +1,26 @@
 /* Login/Sign-Up Card */
 #card {
-    background: var(--purple); color: var(--white);
-    border-radius: 10px;
     width: 330px;
+    background: var(--purple);
+    color: var(--white);
+    border-radius: 10px;
 }
 
 #card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 0 28px 0 20px;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
 }
 
 #card h2 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 #card input {
-    height: 40px; width: 90%;
+    width: 90%;
+    height: 40px;
     margin-left: 8px;
     padding: 0 20px;
 }
@@ -26,9 +30,9 @@
 }
 
 #card button {
+    width: 120px;
+    height: 50px;
     padding: 0;
-    border: none;
-    height: 50px; width: 120px;
     margin-top: -5px;
     background: var(--lightBlue);
     border-radius: 5px;
@@ -36,6 +40,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     transition: .2s;
+    border: none;
 }
 
 #card button:hover {
@@ -49,6 +54,8 @@
     text-decoration: underline;
 }
 
-#login, #signup {
-    min-height: 100vh; width: 100vw;
+#login,
+#signup {
+    width: 100vw;
+    min-height: 100vh;
 }

@@ -1,4 +1,4 @@
-const { User } = require('../../models');
+const { User, Favorite, Album } = require('../../models');
 
 module.exports = async (req, res) => {
     try {
@@ -10,6 +10,18 @@ module.exports = async (req, res) => {
         // Get album info
         const user = await User.findByPk(req.params.id);
 
+        // Get all favorites for user
+        const favorites = await Favorite.findAll({
+            where: {
+                user_id: req.params.id
+            }
+        });
+
+        // Get all album info for each favorite
+        for (let i = 0; i < favorites.length; i++) {
+            favorites[i].dataValues.album = await Album.findByPk(favorites[i].dataValues.album_id);
+        }
+
         // Render home page and pass data to view
         res.render('pages/profile', { 
             page: user.dataValues.username,     // Page title
@@ -17,9 +29,10 @@ module.exports = async (req, res) => {
             loggedIn: req.session.logged_in,    // Logged in status
             id: req.session.user_id,            // User id
             user: user,                         // Album data
+            favorites: favorites,               // User's favorites
         });
     
     } catch (err) {
-        res.status(500).json({ error: 'Failed to load User page' });
+        res.status(500).json({ error: 'Fsailed to load User page' });
     }
 };
