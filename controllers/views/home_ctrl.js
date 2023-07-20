@@ -5,6 +5,7 @@ module.exports = async (req, res) => {
         // If user is logged out, redirect to login page
         if(!req.session.logged_in) {
             res.redirect('/login');
+            return;
         }
 
         // Get 10 (max) most recent album uploads
@@ -12,8 +13,6 @@ module.exports = async (req, res) => {
             limit: 10,
             order: [['createdAt', 'DESC']],
         });
-
-        console.log(req.session.user_id);
 
         // Render home page and pass data to view
         res.render('pages/home', { 

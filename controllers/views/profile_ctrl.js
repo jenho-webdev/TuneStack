@@ -5,6 +5,7 @@ module.exports = async (req, res) => {
         // If user is logged out, redirect to login page
         if(!req.session.logged_in) {
             res.redirect('/login');
+            return;
         }
 
         // Get album info
