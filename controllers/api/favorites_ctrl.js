@@ -1,27 +1,38 @@
 const router = require('express').Router();
-const { Favorite, User, Album } = require('../../models');
+const { Favorite } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // The `/api/favorites` endpoint
 
 // Get all user's favorites
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
-    const favorData = Favorite.findAll({
+    const favorData = await Favorite.findAll({
       where: {
         user_id: req.session.user_id,
       },
     });
 
-    res.status(200).json(favorData);
+    const favors = favorData.map((favor) => favor.get({ plain: true }));
+
+    if (!favorData) {
+      res
+        .status(404)
+        .json({ message: 'Favors not found', session: req.session });
+      return;
+    }
+
+    res.status(200).json(favors);
   } catch (err) {
-    res
-      .status(500)
-      .json({ error: err, message: 'Failed to retrieve all favorites.' });
+    res.status(500).json({
+      error: err,
+      message: 'Failed to retrieve all favorites.',
+    });
   }
 });
 
 // Get one user's favorite by id
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
     const favorData = await Favorite.findOne({
       where: {
@@ -29,7 +40,13 @@ router.get('/:id', async (req, res) => {
         id: req.params.id,
       },
     });
-    res.status(200).json(favorData);
+    if (!favorData) {
+      res.status(404).json({ message: 'Favor not found' });
+      return;
+    }
+    res
+      .status(200)
+      .json({ favorData: favorData, message: `User's favors found.` });
   } catch (err) {
     res.status(500).json({
       error: err,
@@ -39,29 +56,32 @@ router.get('/:id', async (req, res) => {
 });
 
 // Create new favorite
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   /* req.body should look like this...
       {
-        album_id: "1",
+        "album_id": "1"
       }
     */
   try {
     const newFavor = await Favorite.create({
-      album_id: req.session.album_id,
+      ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newFavor);
+    res.status(200).json({
+      newFavorData: newFavor,
+      message: `favor created successfully for ${req.session.user_id} on album ${req.body.album_id}.`,
+    });
   } catch (err) {
     res.status(500).json({
       error: err,
-      message: `Failed to create new favorite`,
+      message: `Failed to create new favorite for user ${req.session.user_id} on ${req.body.album_id}`,
     });
   }
 });
 
 // Update user favorite
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const favorData = await Favorite.destroy({
       where: {
@@ -74,6 +94,8 @@ router.delete('/:id', async (req, res) => {
       res.status(404).json({ message: 'Favor not found and failed to delete' });
       return;
     }
+
+    res.status(200).json({ message: 'Favor found and deleted' });
   } catch (err) {
     res.status(500).json({
       error: err,

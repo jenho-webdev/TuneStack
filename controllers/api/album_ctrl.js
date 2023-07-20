@@ -14,9 +14,60 @@ router.get('/', async (req, res) => {
 
     res.status(200).json(albums);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json({
+      error: err,
+      message: 'Failed to get all albums.',
+    });
   }
 });
+
+//Get user created album records
+router.get('/myAlbums', withAuth, async (req, res) => {
+  try {
+    const albumData = await Album.findAll({
+      where: {
+        creator_id: req.session.user_id,
+      },
+    });
+
+    if (!albumData) {
+      res.status(404).json({
+        message: 'Album(s) not found.',
+        user: req.session,
+        user_id: req.session.user_id,
+      });
+      return;
+    }
+
+    res.status(200).json(albumData);
+  } catch (err) {
+    res
+      .status(500)
+      .json({ error: err, message: 'Failed to retrieve user created albums.' });
+  }
+});
+
+// Get one album
+router.get('/:id', async (req, res) => {
+  try {
+    const albumData = await Album.findOne({
+      where: { album_id: req.params.id },
+    });
+    if (!albumData) {
+      res
+        .status(404)
+        .json({ mssage: `Album ID # ${req.params.id} was not found.` });
+      return;
+    }
+    res.status(200).json({ albumData: albumData, message: `Album found.` });
+  } catch (err) {
+    res
+      .status(500)
+      .json({ error: err, message: 'Failed to retrieve all albums.' });
+  }
+});
+
+
 
 //Create new album
 
@@ -39,52 +90,24 @@ router.post('/', withAuth, async (req, res) => {
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newAlbum);
-  } catch (err) {
-    res.status(500).json({ error: err, message: 'Failed to create album.' });
-  }
-});
-
-// Get all albums
-router.get('/', async (req, res) => {
-  try {
-    const albumData = await Album.findAll({});
-    res.status(200).json(albumData);
-  } catch (err) {
-    res
-      .status(500)
-      .json({ error: err, message: 'Failed to retrieve all albums.' });
-  }
-});
-
-//Get user created album records
-router.get('/myAlbums', withAuth, async (req, res) => {
-  try {
-    const albumData = await Album.findAll({
-      where: {
-        creator_id: req.session.user_id,
-      },
+    res.status(200).json({
+      albumData: newAlbum,
+      message: `Album ${req.body.title} created successfully.`,
     });
-
-    if (!albumData) {
-      res.status(404).json({ message: 'Album(s) not found.' });
-      return;
-    }
-
-    res.status(200).json(albumData);
   } catch (err) {
-    res
-      .status(500)
-      .json({ error: err, message: 'Failed to retrieve user created albums.' });
+    res.status(500).json({
+      error: err,
+      message: `Failed to create album ${req.body.title}.`,
+      albumData: newAlbum,
+    });
   }
 });
-
 // Delete album
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const albumData = await Album.destroy({
       where: {
-        id: req.params.id,
+        album_id: req.params.id,
       },
     });
 
@@ -104,7 +127,7 @@ router.put('/:id', withAuth, async (req, res) => {
   try {
     const albumData = await Album.update(req.body, {
       where: {
-        id: req.params.id,
+        album_id: req.params.id,
       },
     });
 
