@@ -13,15 +13,17 @@
             </div>
         </div>
 
-        <div class="divider"></div>
+    <div class='divider'></div>
 
-        <p id="album-description">{{album.dataValues.description}}</p>
+    <p id='album-description'>{{album.dataValues.description}}</p>
 
-        <div class="divider"></div>
+    <div class='divider'></div>
 
-        <div id="album-footer" class="center-flex">
-            <a class="button" href="{{album.dataValues.extension_url}}"><img src="/img/play.svg"></a>
-            <a class="button"><img src="/img/heart.svg" class="favorite-button {{#if album.dataValues.isFavorited}}favorited{{/if}}" data-id="{{album.dataValues.album_id}}"></a>
+
+    <div id='album-footer' class='center-flex'>
+        <a class='button' href='{{album.dataValues.url}}' rel='ugc nofollow'><img src="/img/play.svg"></a>
+                <a class="button"><img src="/img/heart.svg" class="favorite-button {{#if album.dataValues.isFavorited}}favorited{{/if}}" data-id="{{album.dataValues.album_id}}"></a>
+            </div>
         </div>
     </div>
 </main>
