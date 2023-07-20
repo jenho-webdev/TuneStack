@@ -30,6 +30,7 @@ const sess = {
     sameSite: 'strict',
   },
   resave: false,
+  //saveUninitialized is set to false to not save uninitialized session into DB session table.
   saveUninitialized: false,
   store: new SequelizeStore({
     db: sequelize,
