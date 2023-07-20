@@ -103,3 +103,16 @@
     filter: brightness(1.3) saturate(2) hue-rotate(50deg);
     transition: .1s;
 }
+
+@media (min-width: 768px) {
+    #album-card {
+        width: 600px;
+        background: var(--darkPurple);
+        border-radius: 10px;
+    }
+
+    #album-art {
+        width: 350px;
+        padding-left: 10px;
+    }
+}
