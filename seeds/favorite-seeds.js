@@ -12,7 +12,7 @@ const favoriteData = [];
 for (let i = 0; i < 30; i++) {
   favoriteData.push({
     user_id: getRandomNumber(1, 5), // Assuming user_ids are between 1 and 3.
-    album_id: getRandomNumber(1, 20), // Assuming album_ids are between 1 and 5.
+    album_id: getRandomNumber(1, 20), // Assuming album_ids are between 1 and 20.
   });
 }
 
