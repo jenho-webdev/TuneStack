@@ -1,7 +1,7 @@
 # TuneStack
 
 [![Heroku App](https://img.shields.io/badge/Heroku-Deployed-blueviolet?logo=heroku)](https://tunestack-v1-74649ac6d540.herokuapp.com/)
-[![Github Repo](https://img.shields.io/badge/GitHub_Repo-Deployed-blue)]((https://github.com/jenho-webdev/TuneStack))
+[![Github Repo](https://img.shields.io/badge/GitHub_Repo-Deployed-blue?logo=github)]((https://github.com/jenho-webdev/TuneStack))
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://placeholder)
 
 ## Description
@@ -28,14 +28,15 @@ TuneStack web app is a web application that allows users to build a library of t
 
 ## Live Demo
 
-Check out the live demo of the app: [Here](https://tunestack-v1-74649ac6d540.herokuapp.com/).
+Check out the live demo of the app:
+[![Heroku App](https://img.shields.io/badge/Heroku-Deployed-blueviolet?logo=heroku)](https://tunestack-v1-74649ac6d540.herokuapp.com/)
 Live Demo Slides: [Here](https://docs.google.com/presentation/d/1g0wAdp1-VNkJHB2Vd_clewWChCGXzdufYPJX2WoHx78/edit?usp=sharing)
 
 Login Page:
-![Login Page](./public//img/Login_Page.png)
+![Login Page](./public//img/login_page.png)
 
 Sign up Page:
-![Sign-Up Page](./public//img/signup_Page.png)
+![Sign-Up Page](./public//img/signup_page.png)
 
 ## Installation
 
