@@ -1,5 +1,5 @@
 :root {
-    --darkPurple: rgb(37, 38, 73);;
+    --darkPurple: rgb(37, 38, 73);
     --lightBlue: linear-gradient(349deg, rgba(5,153,171,1) 0%, rgba(38,126,191,1) 35%, rgba(53,91,228,1) 100%);
     --lightPurple: rgb(179, 167, 197);
     --purple: linear-gradient(274deg, rgba(69,35,131,1) 0%, rgba(49,19,135,1) 35%, rgba(78,40,125,1) 100%);
@@ -11,10 +11,9 @@
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: none;
     margin: 0;
     padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: linear-gradient(31deg, rgba(26,29,37,1) 0%, rgba(19,28,52,1) 35%, rgba(13,33,47,1) 100%);
     background-attachment: fixed;
     user-select: none;
@@ -26,13 +25,16 @@ a {
 }   
 
 main {
-    padding-top: 60px; /* Adjust this value to match the header height */
-    padding-bottom: 70px; /* Adjust this value to match the navbar height */
-    overflow-y: auto; /* Enable scrolling for main content */
+    padding-top: 60px;
+    padding-bottom: 70px;
+    overflow-y: auto;
 }
 
 /* Header */
 header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
     background: var(--purple);
     color: var(--white);
     display: flex;
@@ -41,53 +43,57 @@ header {
     width: 100%;
     padding: 0 20px;
     font-size: 14px;
-    position: fixed;
-    top: 0;
-    z-index: 1; /* Ensure the header is above other elements */
 }
 
 header a {
-    display: flex; align-items: center;
+    display: flex;
+    align-items: center;
     height: 100%;
     width: 210px;
 }
 
 #logo {
-    height: 32px;
     margin: 0 80px 0 10px;
+    height: 32px;
 }
 
 /* Navbar */
 nav {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
     background: var(--darkPurple);
     height: 70px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    bottom: 0;
-    z-index: 1; /* Ensure the navbar is above other elements */
 }
 
 #nav-container {
     background: var(--darkPurple);
     height: 70px;
     width: 100vw;
-    display: flex; justify-content: center; align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav a {
-    height: 100%; width: 60px;
+    height: 100%;
+    width: 60px;
     padding: 5px;
     border-radius: 10px;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 2px;
     transition: .2s;
 }
 
 nav a:hover {
-    filter: brightness(.8)  saturate(8);
+    filter: brightness(.8) saturate(8);
     transition: .1s;
 }
 
@@ -113,13 +119,21 @@ nav a p {
 
 /* Misc */
 .flex-center {
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .flex-center-x {
-    display: flex; align-items: center; flex-direction: column;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .shadow {
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.4));
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

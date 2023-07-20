@@ -10,9 +10,12 @@
     </div>
     
     <div id="profile-body">
-        <div id="favorites">
+        <div id="favorites" class="flex-center-x">
             <h2>Favorites</h2>
-            <div>
+            <div id="favorites-container" class="flex-center-x">
+                {{#each favorites}}
+                    {{> favorite-card}}
+                {{/each}}
             </div>
         </div>
     </div>

@@ -20,8 +20,8 @@
         <div class="divider"></div>
 
         <div id="album-footer" class="center-flex">
-            <a class="button" href="{{album.dataValues.url}}"><img src="/img/play.svg"></a>
-            <a class="button"><img src="/img/heart.svg"></a>
+            <a class="button" href="{{album.dataValues.extension_url}}"><img src="/img/play.svg"></a>
+            <a class="button"><img src="/img/heart.svg" class="favorite-button {{#if album.dataValues.isFavorited}}favorited{{/if}}" data-id="{{album.dataValues.album_id}}"></a>
         </div>
     </div>
 </main>

@@ -1,4 +1,4 @@
-const { Album } = require('../../models');
+const { Album, Favorite } = require('../../models');
 
 module.exports = async (req, res) => {
     try {
@@ -10,6 +10,19 @@ module.exports = async (req, res) => {
 
         // Get album info
         const album = await Album.findByPk(req.params.id);
+
+        // Look at user's favorites, and see if this album is in there
+        const favorite = await Favorite.findOne({
+            where: {
+                user_id: req.session.user_id,
+                album_id: req.params.id,
+            }
+        });
+
+        // If album is in user's favorites, mark it as favorited
+        if (favorite) {
+            album.dataValues.isFavorited = true;
+        }
 
         // Render home page and pass data to view
         res.render('pages/album', { 
