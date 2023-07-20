@@ -34,7 +34,7 @@ router.get('/myAlbums', withAuth, async (req, res) => {
       res.status(404).json({
         message: 'Album(s) not found.',
         user: req.session,
-        user_id: req.session.user_id,
+        creator_id: req.session.user_id,
       });
       return;
     }
@@ -67,8 +67,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-
-
 //Create new album
 
 // [POST] [/api/Albums/] with [JSON][BODY]
@@ -76,7 +74,7 @@ router.get('/:id', async (req, res) => {
 // {
 //   "title": "",
 //   "cloudinary_url:": "",
-//  "ext_url": "",
+//  "extension_url": "",
 //   "artist": "",
 //   "year": "",
 //    "description":"",
@@ -87,9 +85,9 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newAlbum = await Album.create({
       ...req.body,
-      user_id: req.session.user_id,
+      creator_id: req.session.user_id,
     });
-
+    
     res.status(200).json({
       albumData: newAlbum,
       message: `Album ${req.body.title} created successfully.`,
