@@ -28,6 +28,13 @@ module.exports = async (req, res) => {
             }
         }
 
+        // If album cloudinary_url is null or has "https://example.com/" in it's path name, replace with default image path
+        for (let i = 0; i < albums.length; i++) {
+            if (albums[i].dataValues.cloudinary_url === '' || albums[i].dataValues.cloudinary_url.includes('https://example.com/')) {
+                albums[i].dataValues.cloudinary_url = '/img/album.svg';
+            }
+        }
+
         // Render home page and pass data to view
         res.render('pages/home', { 
             page: 'Home',                       // Page title
