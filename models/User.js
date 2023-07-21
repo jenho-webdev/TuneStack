@@ -23,10 +23,9 @@ User.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     username: {
-
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
@@ -35,7 +34,10 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8], // Minimum length of 8 characters
+        len: {
+          args: [8], // Minimum length of 8 characters
+          msg: 'Password must be at least 8 characters long.',
+        },
       },
     },
   },
@@ -50,11 +52,11 @@ User.init(
 
     sequelize,
     timestamps: false,
-      
+
     // use the model name as it is without any modification.
     freezeTableName: true,
     underscored: true,
-    modelName: 'user'
+    modelName: 'user',
   }
 );
 

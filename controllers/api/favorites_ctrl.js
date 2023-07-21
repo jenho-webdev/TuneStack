@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 // The `/api/favorites` endpoint
 
-// Get all user's favorites
+// Get all current user's favorites
 router.get('/', withAuth, async (req, res) => {
   try {
     const favorData = await Favorite.findAll({
@@ -31,7 +31,7 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-// Get one user's favorite by id
+// Get one current user's favorite by id
 router.get('/:id', withAuth, async (req, res) => {
   try {
     const favorData = await Favorite.findOne({
@@ -55,13 +55,9 @@ router.get('/:id', withAuth, async (req, res) => {
   }
 });
 
-// Update user favorite (Add/Delete favorite)
+// Update user favorite (Add/Delete favorite) by albumID
+
 router.post('/:id', withAuth, async (req, res) => {
-  /* req.body should look like this...
-      {
-        "album_id": "1"
-      }
-    */
   try {
     const albumId = req.params.id;
     const userId = req.session.user_id;
@@ -96,12 +92,12 @@ router.post('/:id', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json({
       error: err,
-      message: `Failed to update favorites for user ${req.session.user_id}.`,
+      message: `Failed to update favorites for user ${userId}.`,
     });
   }
 });
 
-// Update user favorite
+// Delete current user favorite by favorite's ID on
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const favorData = await Favorite.destroy({

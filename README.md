@@ -1,8 +1,10 @@
 # TuneStack
 
 [![Heroku App](https://img.shields.io/badge/Heroku-Deployed-blueviolet?logo=heroku)](https://tunestack-v1-74649ac6d540.herokuapp.com/)
-[![Github Repo](https://img.shields.io/badge/GitHub_Repo-Deployed-blue?logo=github)]((https://github.com/jenho-webdev/TuneStack))
+[![Github Repo](https://img.shields.io/badge/GitHub_Project_Board-Deployed-blue?logo=github)](https://github.com/jenho-webdev/TuneStack)
+[![Github Project Board](https://img.shields.io/badge/GitHub_Repo-Deployed-blue?logo=github)](https://github.com/users/jenho-webdev/projects/7)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://placeholder)
+
 
 ## Description
 
@@ -20,12 +22,14 @@ TuneStack web app is a web application that allows users to build a library of t
 - Node.js
 - Express.js
 - Handlebars (with express-handlebars)
-- Tailwind CSS
 - Express-session
 - Sequelize (with MySQL2)
 - Bcrypt
 - Dotenv
 - Cloudinary (Images uploading widget and hosting)
+- JAWS DB
+- Heroku
+- 
 
 ## Live Demo
 
@@ -33,10 +37,10 @@ Check out the live demo of the app: [![Heroku App](https://img.shields.io/badge/
 Presentation Slides: [![Here](https://img.shields.io/badge/Google_Sheets-Deployed-blueviolet?logo=GoogleSheets)](https://docs.google.com/presentation/d/1g0wAdp1-VNkJHB2Vd_clewWChCGXzdufYPJX2WoHx78/edit?usp=sharing)
 
 Login Page:
-![Login Page](./public//img/login_page.png)
+![Login Page](./public//img/Login_Page.png)
 
 Sign up Page:
-![Sign-Up Page](./public//img/signup_page.png)
+![Sign-Up Page](./public//img/Signup_page.png)
 
 ## Installation
 
@@ -73,7 +77,9 @@ Sign up Page:
 [![Heroku App](https://img.shields.io/badge/Heroku-Deployed-blueviolet?logo=heroku)](https://tunestack-v1-74649ac6d540.herokuapp.com/)
 
 ## Current Contributors
+![GitHub contributors](https://img.shields.io/github/contributors/jenho-webdev/TuneStack?logo=github&label=Total+Contributors)
 
+Contributor Profiles:
 [![Chandler Chilvers](https://img.shields.io/badge/Github-cwchilvers-blue?style=flat&logo=GitHub&link=https://github.com/cwchilvers/)](https://github.com/cwchilvers)
 [![Jorge Duarte](https://img.shields.io/badge/Github-saduhub-blue?style=flat&logo=GitHub&link=https://github.com/cwchilvers/)](https://github.com/saduhub)
 [![Jen Ho](https://img.shields.io/badge/Github-jenho--webdev-purple?style=flat&logo=GitHub&link=https://github.com/jenho-webdev)](https://github.com/jenho-webdev)
