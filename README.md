@@ -34,12 +34,12 @@ TuneStack web app is a web application that allows users to build a library of t
 ## Live Demo
 
 Check out the live demo of the app: [![Heroku App](https://img.shields.io/badge/Heroku-Deployed-blueviolet?logo=heroku)](https://tunestack-v1-74649ac6d540.herokuapp.com/)
-Presentation Slides: [![Here](https://img.shields.io/badge/Google_Sheets-Deployed-blueviolet?logo=GoogleSheets)](https://docs.google.com/presentation/d/1g0wAdp1-VNkJHB2Vd_clewWChCGXzdufYPJX2WoHx78/edit?usp=sharing)
+Presentation Slides: [![Here](https://img.shields.io/badge/Google_Slides-Deployed-blueviolet?logo=Google&)](https://docs.google.com/presentation/d/1g0wAdp1-VNkJHB2Vd_clewWChCGXzdufYPJX2WoHx78/edit?usp=sharing)
 
 Wireframe:
 ![Login Page](./public//img/wireframe.png)
 
-Database Relationship:
+Database Relationship Diagram:
 ![Login Page](./public//img/DB_Relationship.png)
 
 Login Page:
