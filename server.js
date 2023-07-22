@@ -12,6 +12,8 @@ const path = require('path');
 const router = require('./routes/router');
 // Import express-session
 const session = require('express-session');
+//Import dotenv
+require('dotenv').config();
 
 // Create new instance of express.
 const app = express();
@@ -22,9 +24,9 @@ const PORT = process.env.PORT || 3001;
 // Set up session with cookies
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SECRET,
   cookie: {
-    maxAge: 300000,
+    maxAge: 864000000, // 864,000,000 milliseconds = 10 days
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
@@ -34,6 +36,7 @@ const sess = {
   saveUninitialized: false,
   store: new SequelizeStore({
     db: sequelize,
+    expiration: 864000000, // 864,000,000 milliseconds = 10 days
   }),
 };
 app.use(session(sess));
