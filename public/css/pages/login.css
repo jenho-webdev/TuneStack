@@ -70,3 +70,10 @@
     margin-top: 20px;
     display: none;
 }
+
+/* Fixes Firefox issues */
+@-moz-document url-prefix() {
+    #card button {
+        margin-top: 15px;
+    }
+}
