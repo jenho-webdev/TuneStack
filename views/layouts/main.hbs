@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="/css/main.css">
-        <link rel="stylesheet" type="text/css" href={{css}}>
-        <title>TuneStack | {{page}}</title>
-        <meta name="description" content="TuneStack web app is a web application that allows users to build a library of their favored music albums. Users can register, log in, and manage their album collection by adding their own albums or pin other existing albums they found on the web that created by others." />
-        
-    </head>
 
-    <body>
-        {{!-- Header --}}
-        {{> header}}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href={{css}}>
+    <title>TuneStack | {{page}}</title>
+    <meta name="description"
+        content="TuneStack web app is a web application that allows users to build a library of their favored music albums. Users can register, log in, and manage their album collection by adding their own albums or pin other existing albums they found on the web that created by others." />
 
-        {{!-- Body --}}
-        {{{body}}}
-        
-        {{!-- Navbar --}}
-        {{#if loggedIn}}
-            {{> navbar}}
-        {{/if}}
+</head>
 
-        <script src="/handlers/favorites_hdlr.js"></script>
-        <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-        <script src="/js/cloudinary.js"></script>
-    </body>
+<body>
+    {{!-- Header --}}
+    {{> header}}
+
+    {{!-- Body --}}
+    {{{body}}}
+
+    {{!-- Navbar --}}
+    {{#if loggedIn}}
+    {{> navbar}}
+    {{/if}}
+
+    <script src="/handlers/favorites_hdlr.js"></script>
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="/js/cloudinary.js"></script>
+</body>
+
 </html>

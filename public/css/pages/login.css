@@ -59,3 +59,21 @@
     width: 100vw;
     min-height: 100vh;
 }
+
+#error-message {
+    background-color: rgb(198, 54, 54);
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
+
+/* Fixes Firefox issues */
+@-moz-document url-prefix() {
+    #card button {
+        margin-top: 15px;
+    }
+}

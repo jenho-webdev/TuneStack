@@ -3,6 +3,7 @@ const login = async (event) => {
 
     const username = document.querySelector('#username-input').value.trim();
     const password = document.querySelector('#password-input').value.trim();
+    const errorMessage = document.querySelector('#error-message');
 
     if (username && password) {
         const response = await fetch('/api/users/login', {
@@ -14,7 +15,9 @@ const login = async (event) => {
         if (response.ok) {
             document.location.replace('/'); // Redirect user to home page
         } else {
-            alert('Failed to log in.');     // Alert user that log in failed
+            const data = await response.json();
+            errorMessage.textContent = data.message;
+            errorMessage.style.display = 'block';
         }
     }
 };
